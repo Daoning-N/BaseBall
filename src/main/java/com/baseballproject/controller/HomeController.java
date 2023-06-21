@@ -1,15 +1,24 @@
 package com.baseballproject.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
 
     @GetMapping(value = "/")
-    public String home(Model model){
-        model.addAttribute("test", "test");
+    public String home(){
+      
         return "index";
+    }
+        @GetMapping(value = "/bears")
+    public String bears(){
+      
+        return "index_bear";
+    }
+        @GetMapping(value = "/twins")
+    public String twins(){
+      
+        return "index_twin";
     }
 }
