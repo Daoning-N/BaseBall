@@ -72,8 +72,8 @@ h1.h1 {margin-bottom: 30px; font-size: 24px; font-weight: bold; text-align: cent
 .accordion-list .accordion-item .accordion-name .icon {display: inline-block; position: absolute; top: -4px; left: 0; font-size: 24px; color: #999; transition: all 0.3s;}
 .accordion-list .accordion-item.active .accordion-name .icon {color: #000;}
 .accordion-list .accordion-item .accordion-desc {display: none; padding: 30px; background-color: #f9f9f9;}
-.accordion-list .accordion-item .accordion-desc .desc-title {display: block; margin-left:40px; position: relative; margin-bottom: 10px; padding-left: 12px; font-size: 15px; font-weight: bold; color: #555; line-height: 1;}
-.accordion-list .accordion-item .accordion-desc .desc-title::before {content: ""; display: inline-block; position: absolute; top: 4px; left:0; width: 5px; height: 5px; border-radius: 50%; background-color: #666;}
+.accordion-list .accordion-item .accordion-desc .desc-title {display: block; margin-left:135px; position: relative; margin-bottom: 10px; padding-left: 12px; font-size: 15px; font-weight: bold; color: #555; line-height: 1;}
+.accordion-list .accordion-item .accordion-desc .desc-title::before { display: inline-block; position: absolute; top: 4px; left:0; width: 5px; height: 5px; border-radius: 50%; background-color: #666;}
 .accordion-list .accordion-item .accordion-desc .desc-title:not(:first-child) {margin-top: 25px;}
 .accordion-list .accordion-item .accordion-desc .list-1st li {position: relative; padding-left: 15px; font-size: 15px; color: #666;}
 .accordion-list .accordion-item .accordion-desc .list-1st li::before {display: inline-block; position: absolute; top: 4px; left: 0; font-family: xeicon; font-size: 15px; color: #666;}
