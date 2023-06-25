@@ -111,4 +111,16 @@ public class HomeController {
       
         return "./twins/new_baseball_words_twins";
     }
+   
+    @GetMapping(value = "/twins/new/cheer")
+    public String twins_cheer(){
+      
+        return "./twins/new_baseball_cheer_twins";
+    }   
+
+    @GetMapping(value = "/twins/LG/sing")
+    public String twins_sing(){
+      
+        return "./twins/LG_cheer_sing";
+    }
 }
