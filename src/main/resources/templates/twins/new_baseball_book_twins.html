@@ -1,13 +1,231 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/cheer.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700" rel="stylesheet">
+
+<style>
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f9f9f9;
+	  min-width: 80px; 
+	  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+	  z-index: 1;
+	  padding: 1px;
+	}
+	
+	.dropdown-content a {
+	  color: #333;
+	  text-decoration: none;
+	  display: block;
+	  padding: 1px 10px;
+	}
+	
+	.dropdown-content a:hover {
+	  background-color: #ddd;
+	}
+	
+	.propClone:hover .dropdown-content {
+	  display: block;
+	}
+	</style>
 </head>
 <body>
-  <p>
-    뉴비 예약 정보 엘지
-  </p>
+   <!-- HEADER =============================-->
+<header class="item header margin-top-0">
+   <div class="wrapper">
+      <nav role="navigation" class="navbar navbar-white navbar-embossed navbar-lg navbar-fixed-top">
+      <div class="container">
+         <div class="navbar-header">
+            <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a href="index.html" class="navbar-brand brand"> <span style="color: red;">LG </span><span style="color: black;">TWINS</span></a>
+         </div>
+         <div id="navbar-collapse-02" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+					<li class="propClone"><a href="/twins/info_py">선수정보</a></li>
+					<li class="propClone">
+						<a href="">야구</a>
+						<div class="dropdown-content">
+							<a href="/twins/new/rule">룰</a><br>
+							<a href="/twins/new/words">용어</a><br>
+							<a href="/twins/new/cheer">응원</a><br>
+							<a href="/twins/new/book">예매</a>
+						</div>
+						</li>
+					<li class="propClone"><a href="/twins/info_play">경기정보</a></li>
+					<li class="propClone"><a href="/twins/cheer">응원의 한마디</a></li>
+				</ul>
+         </div>
+      </div>
+      </nav>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 text-center">
+               <div class="text-pageheader">
+                  <div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.1s">
+                     Ticket Reservation
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </header>
+
+<!-- CONTENT =============================-->
+<section class="item content">
+<div class="container toparea">
+   <div class="underlined-title">
+      <div class="editContent">
+         <h1 class="text-center latestitems">티켓 예매 방법</h1>
+
+         </div>
+      <div class="wow-hr type_short">
+         <span class="wow-hr-h">
+         <i class="fa fa-star"></i>
+         <i class="fa fa-star"></i>
+         <i class="fa fa-star"></i>
+         </span>
+      </div>
+   </div>
+   
+   <!-- 박스 시작 -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+   <link rel="stylesheet" href="/css/book.css">
+ 
+   <!-- partial:index.partial.html -->
+<div class="modal-wrap">
+   <div class="modal-header"><span class="is-active"></span><span></span><span></span></div>
+   <div class="modal-bodies">
+    <!-- 1 -->
+      <div class="modal-body modal-body-step-1 is-showing" style="height: 400px;">
+       <div class="title">Step 1</div>
+       <div class="description">야구장 예매 기본 정보</div>
+       <form>
+         <label style="font-size: 15px;">
+            잠실야구장은 두산/엘지 두팀이 사용하는 구장이다.
+         </label>
+         <label style="font-size: 15px;">
+            두산이 홈팀일 경우 => 인터파크 예매<p></p> 
+            엘지가 홈팀일 경우 => 티켓링크 예매
+         </label>
+         <div class="text-center fade-in">
+           <div class="button">Next</div>
+         </div>
+       </form>
+     </div>
+      <!-- 2 -->
+     <div class="modal-body modal-body-step-2" style="height: 400px;">
+       <div class="title">Step 2</div>
+       <div class="description">야구장 좌석</div>
+       <form>
+         <label>
+           <a href="/images/recommend.PNG" target="_blank">
+            좌석 추천
+         </label>
+         </a> 
+         <label>
+            <a href="/images/price.PNG" target="_blank">
+           좌석별 가격순
+         </label>
+         </a>
+         <div class="text-center fade-in">
+           <div class="button" style="margin-top:20px">Next</div>
+         </div>
+       </form>
+     </div>
+      <!-- 3 -->
+     <div class="modal-body modal-body-step-3" style="height: 400px;">
+      <div class="title">Step 3</div>
+      <div class="description">야구장 티켓예매 사이트</div>
+      <form>
+        <a href="https://ticket.interpark.com/"><img src="/images/ticket1.png" alt=""
+           style="max-width: 30%; margin-left:80px;"></a>
+        <a href="https://www.ticketlink.co.kr/"><img src="/images/ticket2.png" alt=""
+           style="max-width: 20%; margin-left:40px;"></a>
+           <p ></p>
+        <div class="text-center">
+          <div class="button" style="margin-top:20px">Next</div>
+        </div>
+      </form>
+     </div>
+   </div>
+ </div>
+ <div class="text-center">
+   <div class="rerun-button">ReRun</div>
+ </div>
+   <!-- partial -->
+     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script><script  src="/js/book.js"></script>
+   <!--박스 끝  -->
+
+   </div>
+</div>
+</div>
+</section>
+
+<!-- CALL TO ACTION =============================-->
+<section class="content-block" style="background-color:#00bba7; margin-top: 420px;">
+<div class="container text-center">
+<div class="row">
+   <div class="col-sm-10 col-sm-offset-1">
+      <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
+         <h1 class="callactiontitle"> Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
+         </h1>
+      </div>
+   </div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER =============================-->
+<div class="footer text-center">
+<div class="container">
+   <div class="row">
+      <p class="footernote">
+          Connect with Scorilo
+      </p>
+      <ul class="social-iconsfooter">
+         <li><a href="#"><i class="fa fa-phone"></i></a></li>
+         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+         <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+      </ul>
+      <p>
+         Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+
+      </p>
+   </div>
+</div>
+</div>
+
+<!-- Load JS here for greater good =============================-->
+<script src="/js/jquery-.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/anim.js"></script>
+<script>
+//----HOVER CAPTION---//     
+jQuery(document).ready(function ($) {
+   $('.fadeshop').hover(
+      function(){
+         $(this).find('.captionshop').fadeIn(150);
+      },
+      function(){
+         $(this).find('.captionshop').fadeOut(150);
+      }
+   );
+});
+</script>
 </body>
 </html>
