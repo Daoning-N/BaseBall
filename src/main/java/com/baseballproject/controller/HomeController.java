@@ -62,9 +62,16 @@ public class HomeController {
         return "./bears/new_baseball_words_bear";
     }
 
+    @GetMapping(value = "/bears/cheer/sing")
+    public String bears_sing() {
+
+        return "./bears/bears_cheer_sing";
+    }
+
     // LG 매핑 시작
 
     @GetMapping(value = "/twins")
+
     public String twins() {
 
         return "./twins/index_twin";
@@ -112,9 +119,9 @@ public class HomeController {
         return "./twins/new_baseball_words_twins";
     }
 
-    @GetMapping(value = "/twins/new/words")
-    public String twins_words() {
+    @GetMapping(value = "/twins/LG/sing")
+    public String twins_sing() {
 
-        return "./twins/new_baseball_words_twins";
+        return "./twins/LG_cheer_sing";
     }
 }
