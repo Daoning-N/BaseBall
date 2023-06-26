@@ -62,12 +62,6 @@ public class HomeController {
         return "./bears/new_baseball_words_bear";
     }
 
-    @GetMapping(value = "/bears/new/cheer")
-    public String bears_cheer(){
-      
-        return "./bears/new_baseball_cheer_bear";
-    }   
-
     @GetMapping(value = "/bears/cheer/sing")
     public String bears_sing(){
       
