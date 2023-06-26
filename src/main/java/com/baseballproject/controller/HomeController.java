@@ -111,4 +111,10 @@ public class HomeController {
 
         return "./twins/new_baseball_words_twins";
     }
+
+    @GetMapping(value = "/twins/new/words")
+    public String twins_words() {
+
+        return "./twins/new_baseball_words_twins";
+    }
 }
