@@ -1,0 +1,114 @@
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px; 
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 1px;
+}
+
+.dropdown-content a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 1px 10px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.propClone:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px; 
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 1px;
+}
+
+.dropdown-content a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 1px 10px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.propClone:hover .dropdown-content {
+  display: block;
+}
+
+
+ .container2 {
+   border: 2px solid black;
+   border-radius: 20px;
+   padding: 20px;
+   width: 70%;
+   height: auto;
+   margin: 0 auto; 
+   display: flex;
+   justify-content: flex-start; 
+   align-items: left;
+   flex-direction: column; 
+ }
+
+ .shape {
+   width: 20%;
+   height: 60%;
+   border-radius: 50px;
+   border: 2px solid rgb(28, 1, 110);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: rgb(28, 1, 110);
+   font-weight: bold;
+   font-size: 20px;
+   margin-bottom: 20px; 
+ }
+
+ .description {
+font-size: 14px;
+text-align: center;
+margin-left: 10px;
+margin-top: -20px; 
+color: rgb(28, 1, 110);
+}
+
+ .shape-container {
+   display: flex;
+   align-items: center; 
+ }
+ .container2 {
+   opacity: 0; /* 초기에 숨김 */
+   animation-name: fadeIn;
+   animation-duration: 4s;
+   animation-fill-mode: forwards;
+ }
+
+ @keyframes fadeIn {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+ }  
+/*공모양 360도 회전*/  
+ .animated-img {
+animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+0% {
+ transform: rotate(0deg);
+}
+100% {
+ transform: rotate(360deg);
+}
+}
