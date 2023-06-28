@@ -20,11 +20,6 @@ public class HomeController {
         return "./bears/index_bear";
     }
 
-    @GetMapping(value = "/bears/cheer")
-    public String bears_cheer() {
-
-        return "./bears/cheer_bear";
-    }
 
     @GetMapping(value = "/bears/info_play")
     public String bears_info_play() {
