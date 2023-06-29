@@ -20,7 +20,6 @@ public class HomeController {
         return "./bears/index_bear";
     }
 
-
     @GetMapping(value = "/bears/info_play")
     public String bears_info_play() {
 
@@ -66,6 +65,11 @@ public class HomeController {
     @GetMapping(value = "/bears/bears_header")
     public String bears_header() {
         return "./bears/bears_header";
+    }
+
+    @GetMapping(value = "/bears/bears_footer")
+    public String bears_footer() {
+        return "./bears/bears_footer";
     }
 
     // LG 매핑 시작
@@ -128,6 +132,11 @@ public class HomeController {
     @GetMapping(value = "/twins/twins_header")
     public String twins_header() {
         return "./twins/twins_header";
+    }
+
+    @GetMapping(value = "/twins/twins_footer")
+    public String twins_footer() {
+        return "./twins/twins_footer";
     }
 
 }
