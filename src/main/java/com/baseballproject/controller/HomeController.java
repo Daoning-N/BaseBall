@@ -63,6 +63,11 @@ public class HomeController {
         return "./bears/bears_cheer_sing";
     }
 
+    @GetMapping(value = "/bears/header")
+    public String bears_header() {
+        return "./bears/header";
+    }
+
     // LG 매핑 시작
 
     @GetMapping(value = "/twins")
