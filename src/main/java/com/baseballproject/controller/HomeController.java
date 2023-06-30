@@ -1,7 +1,16 @@
 package com.baseballproject.controller;
 
+import org.apache.tomcat.util.json.JSONParser;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.client.RestTemplate;
 
 @Controller
 public class HomeController {
@@ -19,7 +28,6 @@ public class HomeController {
 
         return "./bears/index_bear";
     }
-
 
     @GetMapping(value = "/bears/info_play")
     public String bears_info_play() {
