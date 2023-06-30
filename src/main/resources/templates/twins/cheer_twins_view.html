@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세 페이지</title>
+</head>
+<body>
+<h1 th:text="${view.lc_title}">제목</h1>
+<p th:text="${view.lc_content}">내용</p>
+<a th:href="@{/twins/cheer/delete(id=${view.lc_idx})}">삭제</a>
+
+</body>
+</html>

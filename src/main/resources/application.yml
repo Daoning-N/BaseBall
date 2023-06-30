@@ -1,0 +1,21 @@
+# Server Port
+server:
+  port: 8080
+
+#  DB
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://baseball.cfh9yywjmmnp.us-east-1.rds.amazonaws.com:3306/baseball
+    username: baseball
+    password: kpk$0258
+  thymeleaf:
+    cache: false
+
+# jpa
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: create
