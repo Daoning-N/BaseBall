@@ -155,7 +155,7 @@ let currentDate;
 if (monthParam && teamParam) {
   currentDate = new Date(2023, parseInt(monthParam) - 1);
 } else {
-  currentDate = new Date(2023, 5); // 2023년 6월
+  currentDate = new Date(2023, 6); // 2023년 7월
 }
 
 // 달력 데이터 배열
@@ -295,6 +295,17 @@ function updateURL(month, team) {
   // 새로운 URL로 브라우저의 URL을 업데이트
   window.history.replaceState({}, '', newURL);
 }
+
+
+ //현재 페이지의 URL을 가져와 currentURL 변수에 저장
+window.onload = function() {
+    const currentURL = window.location.href;
+
+    // 현재 URL이 원하는 주소와 다를 경우에만 리다이렉션 
+    if (currentURL !== 'http://localhost:8080/bears/info_play?month=7&team=OB') {
+      window.location.href = '/bears/info_play?month=7&team=OB';
+    }
+  };
 </script>
 </body>
 </html>
