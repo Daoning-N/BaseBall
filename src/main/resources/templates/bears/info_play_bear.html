@@ -146,10 +146,11 @@ const urlParams = new URLSearchParams(window.location.search);
 // 'month'라는 이름의 쿼리 매개변수 값을 가져옴
 const monthParam = urlParams.get('month');
 
-// '엘쥐'이라는 이름의 쿼리 매개변수 값을 가져옴
+// '두산'이라는 이름의 쿼리 매개변수 값을 가져옴
 
-const teamParam = urlParams.get('team') ?? 'LG';
+const teamParam = urlParams.get('team') ?? 'OB';
 ////////////////////////////////////////////////////////////////////////////////
+
 let currentDate;
 if (monthParam && teamParam) {
   currentDate = new Date(2023, parseInt(monthParam) - 1);
