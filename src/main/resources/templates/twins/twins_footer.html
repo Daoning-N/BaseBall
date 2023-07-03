@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/cheer.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700" rel="stylesheet">
+
+<style>
+
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f9f9f9;
+	  min-width: 80px; 
+	  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+	  z-index: 1;
+	  padding: 1px;
+	}
+	
+	.dropdown-content a {
+	  color: #333;
+	  text-decoration: none;
+	  display: block;
+	  padding: 1px 10px;
+	}
+	
+	.dropdown-content a:hover {
+	  background-color: #ddd;
+	}
+	
+	.propClone:hover .dropdown-content {
+	  display: block;
+	}
+	</style>
+</head>
+<body>
+	
+<!-- footer =============================-->
+<div class="footer text-center">
+	<div class="container">
+		<div class="row">
+			<p class="footernote">
+				 Connect with Scorilo
+			</p>
+			<ul class="social-iconsfooter">
+				<li><a href="#"><i class="fa fa-phone"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+			</ul>
+			<p>
+				 Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+
+			</p>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Load JS here for greater good =============================-->
+<script src="/js/jquery-.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/anim.js"></script>
+<script>
+//----HOVER CAPTION---//     
+jQuery(document).ready(function ($) {
+   $('.fadeshop').hover(
+      function(){
+         $(this).find('.captionshop').fadeIn(150);
+      },
+      function(){
+         $(this).find('.captionshop').fadeOut(150);
+      }
+   );
+});
+</script>
+</body>
+</html>

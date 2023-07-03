@@ -20,7 +20,6 @@ public class HomeController {
         return "./bears/index_bear";
     }
 
-
     @GetMapping(value = "/bears/info_play")
     public String bears_info_play() {
 
@@ -63,9 +62,20 @@ public class HomeController {
         return "./bears/bears_cheer_sing";
     }
 
+<<<<<<< HEAD
     @GetMapping(value = "/bears/header")
     public String bears_header() {
         return "./bears/header";
+=======
+    @GetMapping(value = "/bears/bears_header")
+    public String bears_header() {
+        return "./bears/bears_header";
+    }
+
+    @GetMapping(value = "/bears/bears_footer")
+    public String bears_footer() {
+        return "./bears/bears_footer";
+>>>>>>> 8901a3971047c315d2c743b22e5635c5b4f56f48
     }
 
     // LG 매핑 시작
@@ -124,4 +134,15 @@ public class HomeController {
 
         return "./twins/LG_cheer_sing";
     }
+
+    @GetMapping(value = "/twins/twins_header")
+    public String twins_header() {
+        return "./twins/twins_header";
+    }
+
+    @GetMapping(value = "/twins/twins_footer")
+    public String twins_footer() {
+        return "./twins/twins_footer";
+    }
+
 }

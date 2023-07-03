@@ -10,9 +10,18 @@
 <link href="/css/cheer.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700" rel="stylesheet">
+<link rel="stylesheet" href="/css/style_twinbears.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   $(function() {
+     
+     $('#header').load('../bears_header');
+     $('#footer').load('../bears_footer');
+   });
+   </script>
 
-<style>
 
+<<<<<<< HEAD
   .dropdown-content {
 	display: none;
 	position: absolute;
@@ -52,6 +61,14 @@
 
 
 
+=======
+</head>
+<body>
+  
+   <div id="header"></div>
+
+
+>>>>>>> 8901a3971047c315d2c743b22e5635c5b4f56f48
 <!-- CONTENT =============================-->
 <section class="item content">
 <div class="container toparea">
@@ -277,26 +294,7 @@
 </section>
 
 <!-- FOOTER =============================-->
-<div class="footer text-center">
-<div class="container">
-   <div class="row">
-      <p class="footernote">
-          Connect with Scorilo
-      </p>
-      <ul class="social-iconsfooter">
-         <li><a href="#"><i class="fa fa-phone"></i></a></li>
-         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-         <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-      </ul>
-      <p>
-         Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-
-      </p>
-   </div>
-</div>
-</div>
+<div id="footer"></div>
 
 <!-- Load JS here for greater good =============================-->
 <script src="/js/jquery-.js"></script>
