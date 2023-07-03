@@ -90,12 +90,6 @@ public class HomeController {
         return "./twins/index_twin";
     }
 
-    @GetMapping(value = "/twins/cheer")
-    public String twins_cheer() {
-
-        return "./twins/cheer_twins";
-    }
-
     @GetMapping(value = "/twins/info_play")
     public String twins_info_play() {
 
