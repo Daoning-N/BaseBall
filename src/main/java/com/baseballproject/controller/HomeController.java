@@ -71,11 +71,6 @@ public class HomeController {
         return "./bears/bears_cheer_sing";
     }
 
-<<<<<<< HEAD
-    @GetMapping(value = "/bears/header")
-    public String bears_header() {
-        return "./bears/header";
-=======
     @GetMapping(value = "/bears/bears_header")
     public String bears_header() {
         return "./bears/bears_header";
@@ -84,7 +79,6 @@ public class HomeController {
     @GetMapping(value = "/bears/bears_footer")
     public String bears_footer() {
         return "./bears/bears_footer";
->>>>>>> 8901a3971047c315d2c743b22e5635c5b4f56f48
     }
 
     // LG 매핑 시작
