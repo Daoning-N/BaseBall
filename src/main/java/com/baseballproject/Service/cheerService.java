@@ -19,7 +19,7 @@ public class cheerService {
 
   public List<LcheerBoard> lcheerboardlist(){
     return lcheerRepository.findAll(); 
-  }
+}
 
   public LcheerBoard lcheerboardview(Integer id){
     return lcheerRepository.findById(id).get(); 
@@ -28,4 +28,5 @@ public class cheerService {
   public void lcheerboardDel(Integer id){
     lcheerRepository.deleteById(id);
   }
+
 }

@@ -64,3 +64,4 @@ public class cheerController {
     return "redirect:/twins/cheer";
   }
 }
+

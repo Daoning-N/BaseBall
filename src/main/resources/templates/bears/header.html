@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/cheer.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700" rel="stylesheet">
+
+<style>
+
+   .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 80px; 
+     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+     z-index: 1;
+     padding: 1px;
+   }
+   
+   .dropdown-content a {
+     color: #333;
+     text-decoration: none;
+     display: block;
+     padding: 1px 10px;
+   }
+   
+   .dropdown-content a:hover {
+     background-color: #ddd;
+   }
+   
+   .propClone:hover .dropdown-content {
+     display: block;
+   }
+   </style>
+</head>
+<body>
+   
+<!-- HEADER =============================-->
+<header class="item header2 margin-top-0">
+   <div class="wrapper">
+      <nav role="navigation" class="navbar navbar-white navbar-embossed navbar-lg navbar-fixed-top">
+      <div class="container">
+         <div class="navbar-header">
+            <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a href="/" class="navbar-brand brand">  <span style="color: red;">TWIN</span><span style="color: blue;">BEARS</span></a>
+         </div>
+         <div id="navbar-collapse-02" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+               <li class="propClone"><a href="/bears/info_py">선수정보</a></li>
+               <li class="propClone">
+                  <a href="">야구</a>
+                  <div class="dropdown-content">
+                     <a href="/bears/new/rule">룰</a><br>
+                     <a href="/bears/new/words">용어</a><br>
+                     <a href="/bears/new/cheer">응원</a><br>
+                     <a href="/bears/new/book">예매</a>
+                  </div>
+                  </li>
+               <li class="propClone"><a href="/bears/info_play">경기정보</a></li>
+               <li class="propClone"><a href="/bears/cheer">응원의 한마디</a></li>
+            </ul>
+         </div>
+      </div>
+      </nav>
+      
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 text-center">
+               <div class="text-homeimage">
+                  <div class="maintext-image" data-scrollreveal="enter top over 1.5s after 0.1s">
+                     <span style="color: rgb(0, 0, 0);">DOOSAN</span> <span style="color: blue;">BEARS</span>
+                  </div>
+                  <div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.3s">
+                     Fan Club
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+
+
+<!-- Load JS here for greater good =============================-->
+<script src="/js/jquery-.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/anim.js"></script>
+<script>
+//----HOVER CAPTION---//     
+jQuery(document).ready(function ($) {
+   $('.fadeshop').hover(
+      function(){
+         $(this).find('.captionshop').fadeIn(150);
+      },
+      function(){
+         $(this).find('.captionshop').fadeOut(150);
+      }
+   );
+});
+</script>
+</body>
+</html>
