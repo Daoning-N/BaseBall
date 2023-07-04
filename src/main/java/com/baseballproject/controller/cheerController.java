@@ -46,9 +46,6 @@ public class cheerController {
     return "redirect:/twins/cheer";
   }
 
-<<<<<<< HEAD
-}
-=======
   @GetMapping("/twins/cheer/modify/{id}")
   public String lcheerboardmodify(@PathVariable("id") Integer id, Model model){
     model.addAttribute("modify", lcheerService.lcheerboardview(id));
@@ -67,4 +64,4 @@ public class cheerController {
     return "redirect:/twins/cheer";
   }
 }
->>>>>>> b5c5913834acd7dea2fa05d864b88e2c36a4700b
+
