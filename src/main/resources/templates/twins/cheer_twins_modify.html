@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 수정폼</title>
+</head>
+<style>
+    </style>
+<body>
+<div class="layout">
+    <form th:action="@{/twins/cheer/update/{id}(id=${modify.lc_idx})}" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" name="Lc_title" id="exampleFormControlInput1" th:value="${modify.lc_title}">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label><br>
+            <textarea id="exampleFormControlTextarea1" name="Lc_content" rows="5" th:text="${modify.lc_content}"></textarea>
+        </div>
+        <div>
+            <label for="exampleFormControlTextarea1" class="form-label">PW</label><br> <!--숫자만 입력 가능하게, 비밀번호 입력해야 글작성 가능하게-->
+            <input type="password" id="exampleFormControlpw" name="Lc_pw"  maxlength='4' placeholder="Your password"></input>
+        </div>
+        <button type="submit">수정</button>
+    </form>
+</div>
+</body>
+</html>
