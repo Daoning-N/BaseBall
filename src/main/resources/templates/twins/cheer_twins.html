@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
+<title>게시글 리스트 페이지</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="">
 <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -57,42 +58,13 @@
               <div class="date">작성일</div>
               <div class="count">조회</div>
           </div>
-          <div>
-              <div class="num">5</div>
-              <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
+          <div th:each="list : ${list}">
+              <div class="num" th:text="${list.lc_idx}">1</div>
+              <div class="title"><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lc_idx})}">글 제목이 들어갑니다.</a></div>
               <div class="writer">김이름</div>
               <div class="date">2021.1.15</div>
               <div class="count">33</div>
-          </div>
-          <div>
-              <div class="num">4</div>
-              <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-              <div class="writer">김이름</div>
-              <div class="date">2021.1.15</div>
-              <div class="count">33</div>
-          </div>
-          <div>
-              <div class="num">3</div>
-              <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-              <div class="writer">김이름</div>
-              <div class="date">2021.1.15</div>
-              <div class="count">33</div>
-          </div>
-          <div>
-              <div class="num">2</div>
-              <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
-              <div class="writer">김이름</div>
-              <div class="date">2021.1.15</div>
-              <div class="count">33</div>
-          </div>
-          <div>
-              <div class="num">1</div>
-              <div class="title">
-                <a href="">글 제목이 들어갑니다.</a></div>
-              <div class="writer">김이름</div>
-              <div class="date">2021.1.15</div>
-              <div class="count">33</div>
-          </div>
+          </div>    
       </div>
       <div class="board_page">
           <a href="#" class="bt first"><<</a>
@@ -105,12 +77,16 @@
           <a href="#" class="bt next">></a>
           <a href="#" class="bt last">>></a>
       </div>
+      <!-- 버튼 시작 -->
       <div class="bt_wrap">
           <a href="/twins/cheer/write" class="on">등록</a>
-          <!--<a href="#">수정</a>-->
+
+          <!-- 버튼 끝 -->
+
       </div>
   </div>
 </div>
+
 <!-- 게시판 리스트 끝 -->
 
 <!-- 다온언니코드 -->
@@ -140,6 +116,7 @@
 <!--언니코드끝-->
  
   </div>
+
   </div>
 </section>
 
@@ -150,7 +127,7 @@
 <div class="row">
    <div class="col-sm-10 col-sm-offset-1">
       <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
-         <h1 class="callactiontitle"> Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
+         <h1 class="callactiontitle"> Promote Items Area <a href="/login">Give</a> Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
          </h1>
       </div>
    </div>

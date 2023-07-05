@@ -1,19 +1,19 @@
 package com.baseballproject.controller;
 
-import org.apache.tomcat.util.json.JSONParser;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.client.RestTemplate;
+
+import com.baseballproject.Service.WinService;
 
 @Controller
 public class HomeController {
+
+private final WinService winService;
+
+  public HomeController(WinService winService){
+    this.winService = winService;
+  }
 
     @GetMapping(value = "/")
     public String home() {
@@ -21,6 +21,11 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping(value = "/login")
+    public String login() {
+
+        return "./login";
+    }
     // 두산 매핑 시작
 
     @GetMapping(value = "/bears")
@@ -71,7 +76,10 @@ public class HomeController {
     }
 
     @GetMapping(value = "/bears/bears_header")
-    public String bears_header() {
+    public String bears_header(Model model) throws Exception {
+        String win = winService.OBWin();
+        System.out.println("두산 순위 "+win);
+        model.addAttribute("lank", win);
         return "./bears/bears_header";
     }
 
@@ -98,6 +106,12 @@ public class HomeController {
     @GetMapping(value = "/twins/info_py")
     public String twins_info_py() {
     return "./twins/info_py_bear";
+    }
+
+    @GetMapping(value = "/twins/info_py2")
+    public String twins_info_py2() {
+
+        return "./twins/info_py_twins2";
     }
 
     @GetMapping(value = "/twins/new/book")
@@ -131,7 +145,10 @@ public class HomeController {
     }
 
     @GetMapping(value = "/twins/twins_header")
-    public String twins_header() {
+    public String twins_header(Model model) throws Exception{
+        String win = winService.LGWin();
+        System.out.println("LG 순위 "+win);
+        model.addAttribute("lank", win);
         return "./twins/twins_header";
     }
 
