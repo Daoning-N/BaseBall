@@ -59,8 +59,8 @@
               <div class="count">조회</div>
           </div>
           <div th:each="list : ${list}">
-              <div class="num" th:text="${list.lc_idx}">1</div>
-              <div class="title"><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lc_idx})}">글 제목이 들어갑니다.</a></div>
+              <div class="num" th:text="${list.lidx}">1</div>
+              <div class="title"><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}">글 제목이 들어갑니다.</a></div>
               <div class="writer">김이름</div>
               <div class="date">2021.1.15</div>
               <div class="count">33</div>
