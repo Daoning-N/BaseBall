@@ -17,5 +17,6 @@ public class LcheerBoard {
 
   private String Lc_title;
   private String Lc_content;
+  private String Lc_pw;
   private Timestamp Lc_date;
 }

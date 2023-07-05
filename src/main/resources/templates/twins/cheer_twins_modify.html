@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>게시글 상세 페이지</title>
+    <title>게시글 수정 페이지</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -15,8 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
        $(function() {
-         
-         $('#header').load('../twins_header');
+         $('#header').load('../../twins_header');
          $('#footer').load('../twins_footer');
        });
        </script>
@@ -43,46 +42,44 @@
              </span>
           </div>
     
-    <!-- 게시글 상세페이지 시작 -->
+    <!-- 게시글 수정페이지 시작 -->
     <div class="board_wrap">
         <div class="board_title">
             <strong>I love you LG Twins</strong>
             <p>LG Twins 선수들의 승리를 위해 응원의 말을 남겨주세요♡</p>
         </div>
-        <div class="board_view_wrap">
-            <div class="board_view">
-                <div class="title" th:text="${view.lc_title}">
-                    글 제목이 들어갑니다.
+        <form th:action="@{/twins/cheer/update/{id}(id=${modify.lc_idx})}" method="post">
+        <div class="board_write_wrap">
+            <div class="board_write">
+                <div class="title">
+                    <dl>
+                        <dt for="exampleFormControlInput1">제목</dt>
+                        <dd><input type="text" name="Lc_title" id="exampleFormControlInput1" placeholder="제목 입력" th:value="${modify.lc_title}"></dd>
+                    </dl>
                 </div>
                 <div class="info">
                     <dl>
-                        <dt>번호</dt>
-                        <dd>1</dd>
-                    </dl>
-                    <dl>
                         <dt>글쓴이</dt>
-                        <dd>김이름</dd>
+                        <dd><input type="text" placeholder="글쓴이 입력" value="김이름"></dd>
                     </dl>
                     <dl>
-                        <dt>작성일</dt>
-                        <dd>2021.1.16</dd>
-                    </dl>
-                    <dl>
-                        <dt>조회</dt>
-                        <dd>33</dd>
+                        <dt for="exampleFormControlTextarea1">비밀번호</dt>
+                        <dd><input type="password" placeholder="비밀번호 입력" id="exampleFormControlpw" name="Lc_pw" maxlength='4'></dd>
                     </dl>
                 </div>
-                <div class="cont" th:text="${view.lc_content}">
+                <div class="cont" for="exampleFormControlTextarea1">
+                <textarea placeholder="내용 입력" id="exampleFormControlTextarea1" name="Lc_content" rows="5" th:text="${modify.lc_content}">
+                </textarea>
                 </div>
             </div>
-            <div class="bt_wrap">
-                <a th:href="@{/twins/cheer/delete(id=${view.lc_idx})}">삭제</a>
-                <a href="/twins/cheer" class="on">목록</a>
-                <a th:href="@{/twins/cheer/modify/{id}(id=${view.lc_idx})}">수정</a>
-            </div>
+            <!-- 버튼 시작 -->
+            <button type="submit" style="margin-left: 40%; width: 90px; height: 60px; margin-top: 40px;">수정</button>
+            <button a href="/twins/cheer" style="margin-left: 5px; width: 90px; height: 60px; margin-top: 40px;">취소</button>
+            <!-- 버튼 끝 -->
         </div>
+      </form>
     </div>
-    <!-- 게시글 상세페이지 끝 -->
+    <!-- 게시글 수정페이지 끝 -->
       </div>
       </div>
     </section>

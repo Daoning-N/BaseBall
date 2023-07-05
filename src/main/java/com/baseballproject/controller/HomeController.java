@@ -90,12 +90,6 @@ public class HomeController {
         return "./twins/index_twin";
     }
 
-    @GetMapping(value = "/twins/cheer")
-    public String twins_cheer() {
-
-        return "./twins/cheer_twins";
-    }
-
     @GetMapping(value = "/twins/info_play")
     public String twins_info_play() {
 
@@ -106,6 +100,12 @@ public class HomeController {
     public String twins_info_py() {
 
         return "./twins/info_py_twins";
+    }
+
+    @GetMapping(value = "/twins/info_py2")
+    public String twins_info_py2() {
+
+        return "./twins/info_py_twins2";
     }
 
     @GetMapping(value = "/twins/new/book")
