@@ -21,6 +21,11 @@ private final WinService winService;
         return "index";
     }
 
+    @GetMapping(value = "/login")
+    public String login() {
+
+        return "./login";
+    }
     // 두산 매핑 시작
 
     @GetMapping(value = "/bears")
