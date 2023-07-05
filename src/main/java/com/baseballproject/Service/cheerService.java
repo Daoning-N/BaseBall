@@ -37,6 +37,16 @@ public class cheerService {
     lcheerRepository.deleteById(id);
   }
 
+  public String lcheerpwcheck(int id, String pw){
+    String result = "" ;
+    if(lcheerRepository.findById(id).get().getLc_pw().equals(pw)){
+      result = "success";
+    } else {
+      result = "fail";
+    }
+    return result;
+  }
+
   // 두산
   public void Dcheerwrite(DcheerBoard dcheerBoard){
     dcheerRepository.save(dcheerBoard);

@@ -1,5 +1,7 @@
 package com.baseballproject.controller;
 
+import java.net.http.HttpClient.Redirect;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.baseballproject.Service.cheerService;
 import com.baseballproject.entity.DcheerBoard;
@@ -79,6 +82,16 @@ public class cheerController {
     cheerService.Lcheerwrite(boardTemp);
 
     return "redirect:/twins/cheer";
+  }
+
+  @GetMapping("/twins/cheer/pwcheck")
+  public String lcheerpwcheck(@RequestParam("id") int id, @RequestParam("pw") String pw, Model model, RedirectAttributes redirect){
+    String result = cheerService.lcheerpwcheck(id, pw);
+
+    redirect.addAttribute("id", id);
+    model.addAttribute("result", result);
+
+    return "redirect:/twins/cheer/delete";
   }
 
   //두산
