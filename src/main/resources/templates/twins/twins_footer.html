@@ -13,7 +13,30 @@
 
 <style>
 
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f9f9f9;
+	  min-width: 80px; 
+	  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+	  z-index: 1;
+	  padding: 1px;
+	}
 	
+	.dropdown-content a {
+	  color: #333;
+	  text-decoration: none;
+	  display: block;
+	  padding: 1px 10px;
+	}
+	
+	.dropdown-content a:hover {
+	  background-color: #ddd;
+	}
+	
+	.propClone:hover .dropdown-content {
+	  display: block;
+	}
 	</style>
 </head>
 <body>
@@ -48,7 +71,16 @@
 <script src="/js/anim.js"></script>
 <script>
 //----HOVER CAPTION---//     
-
+jQuery(document).ready(function ($) {
+   $('.fadeshop').hover(
+      function(){
+         $(this).find('.captionshop').fadeIn(150);
+      },
+      function(){
+         $(this).find('.captionshop').fadeOut(150);
+      }
+   );
+});
 </script>
 </body>
 </html>

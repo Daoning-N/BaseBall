@@ -49,12 +49,15 @@
         <strong>I love you LG Twins</strong>
         <p>LG Twins 선수들의 승리를 위해 응원의 말을 남겨주세요♡</p>
     </div>
+
+
+    <form action="/twins/cheer/write" method="post">
     <div class="board_write_wrap">
         <div class="board_write">
             <div class="title">
                 <dl>
-                    <dt>제목</dt>
-                    <dd><input type="text" placeholder="제목 입력"></dd>
+                    <dt for="exampleFormControlInput1">제목</dt>
+                    <dd><input type="text" name="Lc_title" id="exampleFormControlInput1" placeholder="제목 입력"></dd>
                 </dl>
             </div>
             <div class="info">
@@ -63,48 +66,30 @@
                     <dd><input type="text" placeholder="글쓴이 입력"></dd>
                 </dl>
                 <dl>
-                    <dt>비밀번호</dt>
-                    <dd><input type="password" placeholder="비밀번호 입력"></dd>
+                    <dt for="exampleFormControlTextarea1">비밀번호</dt> <!--숫자만 입력 가능하게, 비밀번호 입력해야 글작성 가능하게-->
+                    <dd><input type="password" id="exampleFormControlpw" name="Lc_pw" maxlength='4' placeholder="비밀번호 입력"></dd>
                 </dl>
             </div>
             <div class="cont">
-                <textarea placeholder="내용 입력"></textarea>
+                <textarea id="exampleFormControlTextarea1" name="Lc_content" placeholder ="내용 입력"></textarea>
             </div>
         </div>
-        <div class="bt_wrap">
-            <a href="view.html" class="on">등록</a>
-            <a href="list.html">취소</a>
-        </div>
+        <!-- 버튼 시작 -->
+        <button type="submit" 
+        style="margin-top: 30px; text-align: center; display: inline-block; min-width: 90px; min-height: 60px; 
+        margin-left: 10px; padding: 10px; border: 1px solid #000; border-radius: 2px; font-size: 1.4rem; 
+        background: #000; color: #fff; margin-left:40%">등록</button>
+        <button a href="/twins/cheer"  style="margin-top: 30px; text-align: center; display: inline-block; 
+        min-width: 90px; min-height: 60px; margin-left: 10px; padding: 10px; border: 1px solid #000; 
+        border-radius: 2px; font-size: 1.4rem; background: #ffffff; color: #000000;">취소</button>
+        <!-- 버튼 끝 -->
     </div>
+</form>
 </div>
-<!-- write 페이지 끝 -->
-
-<!-- 언니코드 -->
-<div class="layout">
-    <form action="/twins/cheer/write" method="post">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Name</label>
-            <input type="text" name="Lc_title" id="exampleFormControlInput1" placeholder="Your Name">
-        </div>
-        <br>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label><br>
-            <textarea id="exampleFormControlTextarea1" name="Lc_content" rows="5">Write Something</textarea>
-        </div>
-        <div>
-            <label for="exampleFormControlTextarea1" class="form-label">PW</label><br> <!--숫자만 입력 가능하게, 비밀번호 입력해야 글작성 가능하게-->
-            <input type="password" id="exampleFormControlpw" name="Lc_pw"  maxlength='4' placeholder="Your password"></input>
-        </div>
-        <button type="submit">작성</button>
-    </form>
-</div>
-<!-- 언니 코드 끝 -->
- 
+<!-- write 페이지 끝 --> 
   </div>
   </div>
 </section>
-
-
 <!-- CALL TO ACTION =============================-->
 <section class="content-block" style="background-color:#00bba7;">
 <div class="container text-center">
