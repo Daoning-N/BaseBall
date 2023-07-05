@@ -23,10 +23,9 @@
 <!-- CSS 링크 추가 -->
 <link href="/css/cheer_twins.css" rel="stylesheet">
 </head>
+
 <body>
-  
    <div id="header"></div>
-  
 <!-- CONTENT =============================-->
 <section class="item content">
 <div class="container toparea">
@@ -64,7 +63,8 @@
                     <dd><input type="text" placeholder="글쓴이 입력"></dd>
                 </dl>
                 <dl>
-                    <dt for="exampleFormControlTextarea1">비밀번호</dt> <!--숫자만 입력 가능하게, 비밀번호 입력해야 글작성 가능하게-->
+                    <dt for="exampleFormControlTextarea1">비밀번호</dt> 
+                    <!--숫자만 입력 가능하게, 비밀번호 입력해야 글작성 가능하게-->
                     <dd><input type="password" id="exampleFormControlpw" name="Lc_pw" maxlength='4' placeholder="비밀번호 입력"></dd>
                 </dl>
             </div>
@@ -109,8 +109,9 @@
 <script src="/js/jquery-.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/anim.js"></script>
-<script>
-//----HOVER CAPTION---//     
+<script src="/js/pw.js"></script>
+<!--HOVER CAPTION  -->   
+<script>  
 jQuery(document).ready(function ($) {
    $('.fadeshop').hover(
       function(){
@@ -122,5 +123,6 @@ jQuery(document).ready(function ($) {
    );
 });
 </script>
+<!--HOVER CAPTION 끝 --> 
 </body>
 </html>
