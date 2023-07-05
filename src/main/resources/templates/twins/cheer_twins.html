@@ -62,7 +62,7 @@
               <div class="num" th:text="${list.lidx}">1</div>
               <div class="title"><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}">글 제목이 들어갑니다.</a></div>
               <div class="writer">김이름</div>
-              <div class="date">2021.1.15</div>
+              <div class="date" a th:text="${list.lc_date}"></a></div>
               <div class="count">33</div>
           </div>    
       </div>
