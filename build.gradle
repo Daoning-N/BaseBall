@@ -26,12 +26,10 @@ dependencies {
    implementation 'org.springframework.boot:spring-boot-starter-web'
    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-  implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
-<<<<<<< HEAD
-
-=======
->>>>>>> b5cc1575cc32b3395bc6b9474df7f82112aaf5df
+   implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
    implementation 'org.jsoup:jsoup:1.14.2'
+   implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+   implementation 'org.springframework.boot:spring-boot-starter-security'
    compileOnly 'org.projectlombok:lombok'
    developmentOnly 'org.springframework.boot:spring-boot-devtools'
    annotationProcessor 'org.projectlombok:lombok'
@@ -39,10 +37,6 @@ dependencies {
    testImplementation 'org.springframework.boot:spring-boot-starter-test'
    runtimeOnly 'com.mysql:mysql-connector-j'
    
-<<<<<<< HEAD
-
-=======
->>>>>>> b5cc1575cc32b3395bc6b9474df7f82112aaf5df
 }
 
 tasks.named('test') {

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 수정폼</title>
+</head>
+<style>
+    </style>
+<body>
+<div class="layout">
+    <form th:action="@{/bears/cheer/update/{id}(id=${modify.didx})}" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" name="Dc_title" id="exampleFormControlInput1" th:value="${modify.dc_title}">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label><br>
+            <textarea id="exampleFormControlTextarea1" name="Dc_content" rows="5" th:text="${modify.dc_content}"></textarea>
+        </div>
+        <button type="submit">수정</button>
+    </form>
+</div>
+</body>
+</html>

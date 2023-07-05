@@ -42,8 +42,7 @@ private final WinService winService;
 
     @GetMapping(value = "/bears/info_py")
     public String bears_info_py() {
-
-        return "./bears/info_py_bear";
+    return "./bears/info_py_bear";
     }
 
     @GetMapping(value = "/bears/new/book")
@@ -106,8 +105,7 @@ private final WinService winService;
 
     @GetMapping(value = "/twins/info_py")
     public String twins_info_py() {
-
-        return "./twins/info_py_twins";
+    return "./twins/info_py_bear";
     }
 
     @GetMapping(value = "/twins/info_py2")
