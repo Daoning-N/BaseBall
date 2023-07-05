@@ -2,7 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+
     <title>게시글 수정 페이지</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -15,7 +17,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
        $(function() {
+
          $('#header').load('../../twins_header');
+
          $('#footer').load('../twins_footer');
        });
        </script>
@@ -42,12 +46,15 @@
              </span>
           </div>
     
+
     <!-- 게시글 수정페이지 시작 -->
+
     <div class="board_wrap">
         <div class="board_title">
             <strong>I love you LG Twins</strong>
             <p>LG Twins 선수들의 승리를 위해 응원의 말을 남겨주세요♡</p>
         </div>
+
         <form th:action="@{/twins/cheer/update/{id}(id=${modify.lc_idx})}" method="post">
         <div class="board_write_wrap">
             <div class="board_write">
@@ -84,6 +91,7 @@
       </form>
     </div>
     <!-- 게시글 수정페이지 끝 -->
+
       </div>
       </div>
     </section>
