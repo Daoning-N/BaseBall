@@ -8,15 +8,15 @@
     </style>
 <body>
 <div class="layout">
-    <form th:action="@{/twins/cheer/update/{id}(id=${modify.lidx})}" method="post">
+    <form th:action="@{/bears/cheer/update/{id}(id=${modify.didx})}" method="post">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Name</label>
-            <input type="text" name="Lc_title" id="exampleFormControlInput1" th:value="${modify.lc_title}">
+            <input type="text" name="Dc_title" id="exampleFormControlInput1" th:value="${modify.dc_title}">
         </div>
         <br>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label><br>
-            <textarea id="exampleFormControlTextarea1" name="Lc_content" rows="5" th:text="${modify.lc_content}"></textarea>
+            <textarea id="exampleFormControlTextarea1" name="Dc_content" rows="5" th:text="${modify.dc_content}"></textarea>
         </div>
         <button type="submit">수정</button>
     </form>

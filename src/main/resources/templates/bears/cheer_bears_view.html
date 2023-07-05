@@ -5,11 +5,11 @@
     <title>게시글 상세 페이지</title>
 </head>
 <body>
-<h1 th:text="${view.lc_title}">제목</h1>
-<p th:text="${view.lc_content}">내용</p>
+<h1 th:text="${view.dc_title}">제목</h1>
+<p th:text="${view.dc_content}">내용</p>
     <label for="exampleFormControlTextarea1" class="form-label">PW</label><br> <!--숫자만 입력 가능하게, 비밀번호 입력해야 글삭제 가능하게-->
     <input type="password" id="password" name="password"  maxlength='4' placeholder="Your password"></input>
-    <a th:href="@{/twins/cheer/modify/{id}(id=${view.lidx})}">수정</a>
-    <a th:href="@{/twins/cheer/delete(id=${view.lidx})}">삭제</a>
+    <a th:href="@{/bears/cheer/modify/{id}(id=${view.didx})}">수정</a>
+    <a th:href="@{/bears/cheer/delete(id=${view.didx})}">삭제</a>
 </body>
 </html>
