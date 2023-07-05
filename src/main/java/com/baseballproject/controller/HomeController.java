@@ -1,19 +1,19 @@
 package com.baseballproject.controller;
 
+import org.apache.tomcat.util.json.JSONParser;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import com.baseballproject.Service.WinService;
+import org.springframework.web.client.RestTemplate;
 
 @Controller
 public class HomeController {
-
-private final WinService winService;
-
-  public HomeController(WinService winService){
-    this.winService = winService;
-  }
 
     @GetMapping(value = "/")
     public String home() {
@@ -72,10 +72,7 @@ private final WinService winService;
     }
 
     @GetMapping(value = "/bears/bears_header")
-    public String bears_header(Model model) throws Exception {
-        String win = winService.OBWin();
-        System.out.println("두산 순위 "+win);
-        model.addAttribute("lank", win);
+    public String bears_header() {
         return "./bears/bears_header";
     }
 
@@ -142,10 +139,7 @@ private final WinService winService;
     }
 
     @GetMapping(value = "/twins/twins_header")
-    public String twins_header(Model model) throws Exception{
-        String win = winService.LGWin();
-        System.out.println("LG 순위 "+win);
-        model.addAttribute("lank", win);
+    public String twins_header() {
         return "./twins/twins_header";
     }
 
