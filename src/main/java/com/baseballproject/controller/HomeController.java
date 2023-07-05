@@ -102,6 +102,12 @@ public class HomeController {
         return "./twins/info_py_twins";
     }
 
+    @GetMapping(value = "/twins/info_py2")
+    public String twins_info_py2() {
+
+        return "./twins/info_py_twins2";
+    }
+
     @GetMapping(value = "/twins/new/book")
     public String twins_book() {
 

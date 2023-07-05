@@ -3,13 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <title>게시글 상세 페이지</title>
-</head>
-<body>
-<h1 th:text="${view.lc_title}">제목</h1>
-<p th:text="${view.lc_content}">내용</p>
-    <label for="exampleFormControlTextarea1" class="form-label">PW</label><br> <!--숫자만 입력 가능하게, 비밀번호 입력해야 글삭제 가능하게-->
-    <input type="password" id="password" name="password"  maxlength='4' placeholder="Your password"></input>
-    <a th:href="@{/twins/cheer/modify/{id}(id=${view.lc_idx})}">수정</a>
-    <a th:href="@{/twins/cheer/delete(id=${view.lc_idx})}">삭제</a>
-</body>
-</html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/cheer.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style_twinbears.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+       $(function() {
+         
+         $('#header').load('../twins_header');
+         $('#footer').load('../twins_footer');
+       });
+       </script>
+    <!-- CSS 링크 추가 -->
+    <link href="/css/cheer_twins.css" rel="stylesheet">
+    </head>
+    <body>
+      
+       <div id="header"></div>
+      
+    <!-- CONTENT =============================-->
+    <section class="item content">
+    <div class="container toparea">
+       <div class="underlined-title">
+          <div class="editContent">
+             <h1 class="text-center latestitems">응원의 한마디</h1>
+             </div>
+    
+          <div class="wow-hr type_short">
+             <span class="wow-hr-h">
+             <i class="fa fa-star"></i>
+             <i class="fa fa-star"></i>
+             <i class="fa fa-star"></i>
+             </span>
+          </div>
+    
+    <!-- 게시글 상세페이지 시작 -->
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>I love you LG Twins</strong>
+            <p>LG Twins 선수들의 승리를 위해 응원의 말을 남겨주세요♡</p>
+        </div>
+        <div class="board_view_wrap">
+            <div class="board_view">
+                <div class="title" th:text="${view.lc_title}">
+                    글 제목이 들어갑니다.
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>번호</dt>
+                        <dd>1</dd>
+                    </dl>
+                    <dl>
+                        <dt>글쓴이</dt>
+                        <dd>김이름</dd>
+                    </dl>
+                    <dl>
+                        <dt>작성일</dt>
+                        <dd>2021.1.16</dd>
+                    </dl>
+                    <dl>
+                        <dt>조회</dt>
+                        <dd>33</dd>
+                    </dl>
+                </div>
+                <div class="cont" th:text="${view.lc_content}">
+                </div>
+            </div>
+            <div class="bt_wrap">
+                <a th:href="@{/twins/cheer/delete(id=${view.lc_idx})}">삭제</a>
+                <a href="/twins/cheer" class="on">목록</a>
+                <a th:href="@{/twins/cheer/modify/{id}(id=${view.lc_idx})}">수정</a>
+            </div>
+        </div>
+    </div>
+    <!-- 게시글 상세페이지 끝 -->
+      </div>
+      </div>
+    </section>
+    
+    <!-- CALL TO ACTION =============================-->
+    <section class="content-block" style="background-color:#00bba7;">
+    <div class="container text-center">
+    <div class="row">
+       <div class="col-sm-10 col-sm-offset-1">
+          <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
+             <h1 class="callactiontitle"> Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
+             </h1>
+          </div>
+       </div>
+    </div>
+    </div>
+    </section>
+    
+    <!-- FOOTER =============================-->
+    <div id="footer"></div>
+    
+    <!-- Load JS here for greater good =============================-->
+    <script src="/js/jquery-.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/anim.js"></script>
+    <script>
+    //----HOVER CAPTION---//     
+    jQuery(document).ready(function ($) {
+       $('.fadeshop').hover(
+          function(){
+             $(this).find('.captionshop').fadeIn(150);
+          },
+          function(){
+             $(this).find('.captionshop').fadeOut(150);
+          }
+       );
+    });
+    </script>
+    </body>
+    </html>
