@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>게시글 상세 페이지</title>
-
-</head>
-<body>
-<h1 th:text="${view.lc_title}">제목</h1>
-<p th:text="${view.lc_content}">내용</p>
-    <label for="exampleFormControlTextarea1" class="form-label">PW</label><br> <!--숫자만 입력 가능하게, 비밀번호 입력해야 글삭제 가능하게-->
-    <input type="password" id="password" name="password"  maxlength='4' placeholder="Your password"></input>
-    <a th:href="@{/twins/cheer/modify/{id}(id=${view.lidx})}">수정</a>
-    <a th:href="@{/twins/cheer/delete(id=${view.lidx})}">삭제</a>
-</body>
-</html>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="">
@@ -31,6 +18,37 @@
          $('#header').load('../twins_header');
          $('#footer').load('../twins_footer');
        });
+//모달 스크립트
+$(document).ready(function() {
+    // 삭제 링크 클릭 시 모달 표시
+    $('.delete-link').click(function(e) {
+      e.preventDefault();
+      $('#deleteModal').modal('show');
+      
+      // 모달 내에서 삭제 버튼 클릭 시 게시글 삭제
+      $('#confirmDelete').click(function() {
+        var password = $('#deletePassword').val();
+        // 패스워드 유효성 검사 및 삭제 요청
+        if (password === '1234') {
+          // 패스워드가 일치하는 경우 게시글 삭제 요청 수행
+          var deleteUrl = $(this).prev('.delete-link').attr('href');
+          
+          // 게시글 삭제 요청
+          // 삭제에 필요한 작업 수행
+
+          // 모달 닫기
+          $('#deleteModal').modal('hide');
+          
+          // 게시글 삭제 후 리다이렉트
+          setTimeout(function() {
+            window.location.href = "/twins/cheer"; // 삭제 후 리다이렉트할 URL
+          }, 500); // 필요에 따라 지연 시간 조정
+        } else {
+          alert('잘못된 패스워드입니다.');
+        }
+      });
+    });
+  });
        </script>
     <!-- CSS 링크 추가 -->
     <link href="/css/cheer_twins.css" rel="stylesheet">
@@ -91,7 +109,7 @@
                 </div>
             </div>
             <div class="bt_wrap">
-                <a th:href="@{/twins/cheer/delete(id=${view.lidx})}">삭제</a>
+                <a class="delete-link" th:href="@{/twins/cheer/delete(id=${view.lidx})}">삭제</a>
                 <a href="/twins/cheer" class="on">목록</a>
                 <a th:href="@{/twins/cheer/modify/{id}(id=${view.lidx})}">수정</a>
 
@@ -105,6 +123,26 @@
       </div>
     </section>
     
+    <!--모달부분-->
+    <div id="deleteModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">게시글 삭제</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p>게시글을 삭제하려면 패스워드를 입력하세요:</p>
+                  <input type="password" id="deletePassword" class="form-control" placeholder="비밀번호 입력">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" id="confirmDelete">삭제</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                </div>
+              </div>
+        </div> 
+     </div> 
+        <!--모달부분 끝-->
     <!-- CALL TO ACTION =============================-->
     <section class="content-block" style="background-color:#00bba7;">
     <div class="container text-center">
@@ -141,4 +179,3 @@
     </script>
     </body>
     </html>
-
