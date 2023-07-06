@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>게시글 상세 페이지</title>
+
+</head>
+<body>
+<h1 th:text="${view.lc_title}">제목</h1>
+<p th:text="${view.lc_content}">내용</p>
+    <label for="exampleFormControlTextarea1" class="form-label">PW</label><br> <!--숫자만 입력 가능하게, 비밀번호 입력해야 글삭제 가능하게-->
+    <input type="password" id="password" name="password"  maxlength='4' placeholder="Your password"></input>
+    <a th:href="@{/twins/cheer/modify/{id}(id=${view.lidx})}">수정</a>
+    <a th:href="@{/twins/cheer/delete(id=${view.lidx})}">삭제</a>
+</body>
+</html>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -79,9 +91,9 @@
                 </div>
             </div>
             <div class="bt_wrap">
-                <a th:href="@{/twins/cheer/delete(id=${view.lc_idx})}">삭제</a>
+                <a th:href="@{/twins/cheer/delete(id=${view.lidx})}">삭제</a>
                 <a href="/twins/cheer" class="on">목록</a>
-                <a th:href="@{/twins/cheer/modify/{id}(id=${view.lc_idx})}">수정</a>
+                <a th:href="@{/twins/cheer/modify/{id}(id=${view.lidx})}">수정</a>
 
             </div>
         </div>
@@ -129,3 +141,4 @@
     </script>
     </body>
     </html>
+

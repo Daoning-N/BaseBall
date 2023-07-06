@@ -13,15 +13,15 @@ import lombok.Data;
 
 @Entity
 @Data
-public class LcheerBoard {
+public class DcheerBoard {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int lidx;
+  private int didx;
 
-  private String Lc_title;
-  private String Lc_content;
-  private String Lc_pw;
-  
+  private String Dc_title;
+  private String Dc_content;
+  private String Dc_pw;
+
   @UpdateTimestamp
-  private LocalDateTime Lc_date;
+  private LocalDateTime Dc_date;
 }
