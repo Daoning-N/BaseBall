@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>게시글 상세 페이지</title>
-
-</head>
-<body>
-<h1 th:text="${view.lc_title}">제목</h1>
-<p th:text="${view.lc_content}">내용</p>
-    <label for="exampleFormControlTextarea1" class="form-label">PW</label><br> <!--숫자만 입력 가능하게, 비밀번호 입력해야 글삭제 가능하게-->
-    <input type="password" id="password" name="password"  maxlength='4' placeholder="Your password"></input>
-    <a th:href="@{/twins/cheer/modify/{id}(id=${view.lidx})}">수정</a>
-    <a th:href="@{/twins/cheer/delete(id=${view.lidx})}">삭제</a>
-</body>
-</html>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +17,37 @@
          $('#header').load('../twins_header');
          $('#footer').load('../twins_footer');
        });
-       </script>
+      
+       // 유효성 검사 시작
+   $(document).ready(function() {
+    // 비밀번호 유효성 검사 함수
+    function validatePassword() {
+      var password = $('#exampleFormControlpw').val(); // 입력된 비밀번호 가져오기
+
+      if (password.length >= 4) {
+        // 비밀번호가 4자리가 아닌 경우
+        alert('비밀번호를 입력해주세요.');
+        return false; // 폼 제출 중지
+      }
+
+      return true; // 유효성 검사 통과
+    }
+
+    // 폼 제출 시 비밀번호 유효성 검사 및 등록 완료 메시지 표시
+    $('form').submit(function() {
+      if (validatePassword()) {
+        alert('등록되었습니다!'); // 등록 완료 메시지 표시
+        // 추가로 필요한 작업을 수행할 수 있습니다.
+        // 예를 들어, 서버로 데이터를 전송하거나 다른 페이지로 이동하는 등의 작업을 수행할 수 있습니다.
+      } else {
+        return false; // 비밀번호 유효성 검사가 실패한 경우 폼 제출 중지
+      }
+    });
+  });
+  // 유효성 검사 끝
+   </script>
+
+
     <!-- CSS 링크 추가 -->
     <link href="/css/cheer_twins.css" rel="stylesheet">
     </head>
@@ -63,45 +79,41 @@
         </div>
         <div class="board_view_wrap">
             <div class="board_view">
-
-                <div class="title" th:text="${view.lc_title}">
-
-                    글 제목이 들어갑니다.
-                </div>
+                <!-- 제목 -->
+                <div class="title" th:text="${view.lc_title}"></div>
+                <!-- 번호 / 날짜 -->
                 <div class="info">
                     <dl>
                         <dt>번호</dt>
-                        <dd>1</dd>
-                    </dl>
-                    <dl>
-                        <dt>글쓴이</dt>
-                        <dd>김이름</dd>
+                        <dd class="num" th:text="${view.lidx}"></dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dd>2021.1.16</dd>
-                    </dl>
-                    <dl>
-                        <dt>조회</dt>
-                        <dd>33</dd>
+                        <dd class="date" th:text="${view.lc_date}"></dd>
                     </dl>
                 </div>
-
-                <div class="cont" th:text="${view.lc_content}">
-                </div>
+                <!-- 내용 -->
+                <div class="cont" th:text="${view.lc_content}"></div>
             </div>
+           
+            <!-- 비밀번호 -->
+            <div class="lgpw" style="margin-top:30px;">
+            <label for="exampleFormControlTextarea1" class="form-label" style="font-size:20px;">PW<ba></ba></label>
+            <input type="password" id="password" name="password"  maxlength='4' placeholder="    Your password" 
+            style="height: 50px; margin-left:15px;"></input>
+            </div>
+            
+            <!-- 버튼시작 -->
             <div class="bt_wrap">
                 <a th:href="@{/twins/cheer/delete(id=${view.lidx})}">삭제</a>
-                <a href="/twins/cheer" class="on">목록</a>
+                <a href="/twins/cheer" class="on">목록</a>                
                 <a th:href="@{/twins/cheer/modify/{id}(id=${view.lidx})}">수정</a>
-
             </div>
+            <!-- 버튼 끝 -->
         </div>
     </div>
     <!-- 게시글 상세페이지 끝 -->
-
-
-      </div>
+        </div>
       </div>
     </section>
     

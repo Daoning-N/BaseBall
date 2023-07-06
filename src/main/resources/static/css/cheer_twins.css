@@ -95,7 +95,7 @@ a {
 
 .board_list .title {
     width: 60%;
-    text-align: left;
+    text-align: center;
 }
 
 .board_list .top .title {
@@ -107,7 +107,7 @@ a {
 }
 
 .board_list .date {
-    width: 10%;
+    width: 20%;
 }
 
 .board_list .count {
@@ -263,7 +263,7 @@ a {
 .board_write .info input[type="text"],
 .board_write .info input[type="password"] {
     padding: 10px;
-    width: 183%;
+    width: 225%;
     box-sizing: border-box;
 }
 
