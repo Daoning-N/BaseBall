@@ -75,7 +75,16 @@ h2#month-year {
 <body>
 
 <!-- CONTENT =============================-->
+<div class="container toparea">
+  <div class="underlined-title">
+     <div class="editContent">
+        <h1 class="text-center latestitems"></h1>
 
+        </div>
+     <div class="wow-hr type_short">
+        
+     </div>
+  </div>
 <div class="container3">
   <div class="row">
      
@@ -139,8 +148,24 @@ const monthYear = document.getElementById('month-year');
 const previousMonthBtn = document.getElementById('previous-month');
 const nextMonthBtn = document.getElementById('next-month');
 
-// 초기 날짜 설정
-let currentDate = new Date(2023, 5); // 2023년 6월
+ //예슬누나 여기
+// 현재 페이지의 URL에서 쿼리 매개변수를 가져오는 URLSearchParams 객체를 생성
+const urlParams = new URLSearchParams(window.location.search);
+
+// 'month'라는 이름의 쿼리 매개변수 값을 가져옴
+const monthParam = urlParams.get('month');
+
+// '두산'이라는 이름의 쿼리 매개변수 값을 가져옴
+
+const teamParam = urlParams.get('team') ?? 'OB';
+////////////////////////////////////////////////////////////////////////////////
+
+let currentDate;
+if (monthParam && teamParam) {
+  currentDate = new Date(2023, parseInt(monthParam) - 1);
+} else {
+  currentDate = new Date(2023, 6); // 2023년 7월
+}
 
 // 달력 데이터 배열
 const calendarData = [
@@ -169,11 +194,13 @@ renderCalendar(currentDate);
 // 이전 달과 다음 달 버튼에 이벤트 리스너 추가
 previousMonthBtn.addEventListener('click', () => {
   currentDate.setMonth(currentDate.getMonth() - 1);
+  updateURL(currentDate.getMonth() + 1, teamParam);
   renderCalendar(currentDate);
 });
 
 nextMonthBtn.addEventListener('click', () => {
   currentDate.setMonth(currentDate.getMonth() + 1);
+  updateURL(currentDate.getMonth() + 1, teamParam);
   renderCalendar(currentDate);
 });
 
@@ -235,6 +262,40 @@ function renderCalendar(date) {
     calendarBody.appendChild(row);
   }
 }
+
+
+
+// URL 업데이트 함수 //예슬 누나 여기
+function updateURL(month, team) {
+  // URLSearchParams 객체를 생성
+  const params = new URLSearchParams();
+
+  // month 매개변수를 쿼리 매개변수로 설정
+  params.set('month', month);
+
+  // team 매개변수를 쿼리 매개변수로 설정
+  params.set('team', team);
+
+  // 현재 URL의 경로와 설정된 쿼리 매개변수를 문자열로 변환하여 새로운 URL을 생성
+  const newURL = window.location.pathname + '?' + params.toString();
+
+  // 새로운 URL로 브라우저의 URL을 업데이트
+  window.history.replaceState({}, '', newURL);
+}
+
+
+ //현재 페이지의 URL을 가져와 currenturl 변수에 저장
+ window.onload = function() {
+  const currentURL = window.location.href; //현재 페이지의 URL을 currenturl 변수에 저장
+  const currentDate = new Date(); //현재 날짜와 시간을 나타내는 date 객체를 생성
+  const currentMonth = currentDate.getMonth() + 1;
+
+  // 현재 URL이 원하는 주소와 다를 경우에만 리다이렉션
+  if (currentURL !== `://localhoshttpt:8080/bears/Calendar.do?month=${currentMonth}&team=OB`) {
+    window.history.replaceState({}, '', `/bears/Calendar.do?month=${currentMonth}&team=OB`); // 현재 url을 원하는 주소로 변경
+  }
+};
+
 </script>
 </body>
 </html>
