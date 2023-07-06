@@ -235,6 +235,18 @@ function renderCalendar(date) {
     calendarBody.appendChild(row);
   }
 }
+window.onload = function() {
+  const currentURL = window.location.href;
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth()+1;
+
+
+    // 현재 URL이 원하는 주소와 다를 경우에만 리다이렉션 
+    if (currentURL !== `://localhoshttpt:8080/bears/Calendar.do?month=${currentMonth}&team=OB`) {
+    window.location.href = `/bears/Calendar.do?month=${currentMonth}&team=OB`;
+  }
+};
+
 </script>
 </body>
 </html>
