@@ -102,34 +102,20 @@ form input[type="password"] {
    </div>
    
    <!-- 박스 시작 -->
-   <form name="form1" method="post" class="abc">
+   <form th:action="@{/login}" method="post" class="abc">
      
          
-    <p style="text-align:center">ID　　<input name="user_id" id="user_id" placeholder="아이디" title="아이디" style="width: 345px; height: 50px;"><p>
-    <p style="text-align:center">PW 　<input type=password name="user_pw" id="user_pw" placeholder="비밀번호" title="비밀번호" style="width: 345px; height: 50px;"><p>
+    <p style="text-align:center">Email　　<input type=text name="memberEmail" id="memberEmail" placeholder="Email" title="Email" style="width: 345px; height: 50px;"><p>
+    <p style="text-align:center">PW 　<input type=password name="memberPassword" id="memberPassword" placeholder="Password" title="Password" style="width: 345px; height: 50px;"><p>
          
          <div class="container1" >   
-         <button style="width: 400px; height: 50px;"  type="button" id="btnLogin" class="btn btn-dark">Login</button>
+         <button style="width: 400px; height: 50px;"  type="submit" id="btnLogin" class="btn btn-dark">Login</button>
          </div>
+   
          <div class="container1">
-         <button style="width: 400px; height: 50px;" type="button" onclick="location.href='userWrite.do' " class="btn btn-dark">Join</button>
+         <button style="width: 400px; height: 50px;" type="button" class="btn btn-dark" onclick="location.href='/signup'">Join</button>
          </div>
-          <c:if test="${msg == 'failure' }">
-            <div class="abc" style="color: red">
-              
-            </div>
-         </c:if>
-            
-            <c:if test="${msg == 'logout' }">
-               <div class="abc" style="color: red" >
-                  
-               </div>
-            </c:if>
-         
-
-         
    </form>
-
    </div>
 </div>
 </div>
