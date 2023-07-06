@@ -51,21 +51,23 @@
   </div>
   <div class="board_list_wrap">
       <div class="board_list">
+         <!-- 게시판 제목 부분 -->
           <div class="top">
               <div class="num">번호</div>
               <div class="title">제목</div>
-              <div class="writer">글쓴이</div>
               <div class="date">작성일</div>
-              <div class="count">조회</div>
           </div>
+         <!-- 게시판 내용 부분 -->
           <div th:each="list : ${list}">
-              <div class="num" th:text="${list.lidx}">1</div>
-              <div class="title"><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}">글 제목이 들어갑니다.</a></div>
-              <div class="writer">김이름</div>
+            <!-- 번호 -->
+              <div class="num" th:text="${list.lidx}"></div>
+            <!-- 제목 -->
+              <div class="title"><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}"></a></div>
+            <!-- 날짜 -->
               <div class="date" a th:text="${list.lc_date}"></a></div>
-              <div class="count">33</div>
           </div>    
       </div>
+      <!-- 페이징 -->
       <div class="board_page">
           <a href="#" class="bt first"><<</a>
           <a href="#" class="bt prev"><</a>
@@ -80,46 +82,14 @@
       <!-- 버튼 시작 -->
       <div class="bt_wrap">
           <a href="/twins/cheer/write" class="on">등록</a>
-
           <!-- 버튼 끝 -->
-
       </div>
-  </div>
+   </div>
 </div>
-
 <!-- 게시판 리스트 끝 -->
-
-<!-- 다온언니코드 -->
-<div class="layout">
-  <table>
-    <thead>
-    <tr>
-      <th>글 번호</th>
-      <th>제목</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <tr th:each="list : ${list}">
-      <td th:text="${list.lidx}">1</td>
-      <td><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}">제목입니다.</a></td>
-    </tr>
-    </tr>
-      <button type="button" onclick="location.href='/twins/cheer/write';">작성</button>
-    </tbody>
-  </table>
-   <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
-      <a th:if="${page != nowPage}" th:href="@{/twins/cheer(page = ${page-1})}" th:text="${page}"></a>
-      <strong  th:if="${page == nowPage}" th:text="${page}" style="color : red"></strong>
-   </th:block>
-  </div>
-<!--언니코드끝-->
- 
-  </div>
-
+   </div>
   </div>
 </section>
-
 
 <!-- CALL TO ACTION =============================-->
 <section class="content-block" style="background-color:#00bba7;">

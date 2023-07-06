@@ -1,3 +1,7 @@
+<!--비밀번호 데이터-->
+<dt for="exampleFormControlTextarea1">비밀번호</dt>
+       <dd><input type="password" placeholder="비밀번호 입력" id="exampleFormControlpw" name="Lc_pw" maxlength='4'></dd>
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -18,37 +22,65 @@
          $('#header').load('../twins_header');
          $('#footer').load('../twins_footer');
        });
-//모달 스크립트
-$(document).ready(function() {
-    // 삭제 링크 클릭 시 모달 표시
-    $('.delete-link').click(function(e) {
-      e.preventDefault();
-      $('#deleteModal').modal('show');
-      
-      // 모달 내에서 삭제 버튼 클릭 시 게시글 삭제
-      $('#confirmDelete').click(function() {
-        var password = $('#deletePassword').val();
-        // 패스워드 유효성 검사 및 삭제 요청
-        if (password === '1234') {
-          // 패스워드가 일치하는 경우 게시글 삭제 요청 수행
-          var deleteUrl = $(this).prev('.delete-link').attr('href');
-          
-          // 게시글 삭제 요청
-          // 삭제에 필요한 작업 수행
 
-          // 모달 닫기
-          $('#deleteModal').modal('hide');
-          
-          // 게시글 삭제 후 리다이렉트
-          setTimeout(function() {
-            window.location.href = "/twins/cheer"; // 삭제 후 리다이렉트할 URL
-          }, 500); // 필요에 따라 지연 시간 조정
-        } else {
-          alert('잘못된 패스워드입니다.');
-        }
-      });
-    });
+// 1. 삭제 모달 스크립트
+  $(document).ready(function() {
+  // 삭제 링크 클릭 시 모달 표시
+  $('.delete-link').click(function(e) { //삭제 코드의 ID값 delte-link로 설정함
+    e.preventDefault();
+    $('#deleteModal').modal('show');
   });
+
+  // 삭제 버튼 클릭 시 패스워드 확인
+  $(document).ready(function() {
+  // 삭제 버튼 클릭 시 패스워드 확인
+  $('#confirmDelete').click(function() {
+    var password = $('#deletePassword').val();
+    // 패스워드 유효성 검사 및 삭제 요청
+    if (password === '1234') {
+      // 패스워드가 일치하는 경우 게시글 삭제 요청 수행
+      var deleteUrl = $(this).prev('.delete-link').attr('href');
+      // 모달 닫기
+      $('#deleteModal').modal('hide');
+      setTimeout(function() {
+        window.location.href = "/twins/cheer"; // 지연 후 리다이렉트
+      }, 500); // 필요에 따라 지연 시간을 조정하세요
+    } else {
+      alert('잘못된 패스워드입니다.');
+    }
+  });
+});
+});
+
+// 2. 수정 모달 스크립트
+$(document).ready(function() {
+  // 삭제 링크 클릭 시 모달 표시
+  $('.modify-link').click(function(e) { //삭제 코드의 ID값 delte-link로 설정함
+    e.preventDefault();
+    $('#modifyModal').modal('show');
+  });
+
+  // 삭제 버튼 클릭 시 패스워드 확인
+  $(document).ready(function() {
+  // 삭제 버튼 클릭 시 패스워드 확인
+  $('#confirmModify').click(function() {
+    var password = $('#modifyPassword').val();
+    // 패스워드 유효성 검사 및 삭제 요청
+    if (password === '1234') {
+      // 패스워드가 일치하는 경우 게시글 삭제 요청 수행
+      var deleteUrl = $(this).prev('.modify-link').attr('href');
+      // 모달 닫기
+      $('#modifyModal').modal('hide');
+      setTimeout(function() {
+        window.location.href = "/twins/cheer"; // 지연 후 리다이렉트
+      }, 500); // 필요에 따라 지연 시간을 조정하세요
+    } else {
+      alert('잘못된 패스워드입니다.');
+    }
+  });
+});
+});
+
        </script>
     <!-- CSS 링크 추가 -->
     <link href="/css/cheer_twins.css" rel="stylesheet">
@@ -73,57 +105,47 @@ $(document).ready(function() {
              </span>
           </div>
     
-    <!-- 게시글 상세페이지 시작 -->
-    <div class="board_wrap">
-        <div class="board_title">
-            <strong>I love you LG Twins</strong>
-            <p>LG Twins 선수들의 승리를 위해 응원의 말을 남겨주세요♡</p>
-        </div>
-        <div class="board_view_wrap">
-            <div class="board_view">
-
-                <div class="title" th:text="${view.lc_title}">
-
-                    글 제목이 들어갑니다.
-                </div>
-                <div class="info">
-                    <dl>
-                        <dt>번호</dt>
-                        <dd>1</dd>
-                    </dl>
-                    <dl>
-                        <dt>글쓴이</dt>
-                        <dd>김이름</dd>
-                    </dl>
-                    <dl>
-                        <dt>작성일</dt>
-                        <dd>2021.1.16</dd>
-                    </dl>
-                    <dl>
-                        <dt>조회</dt>
-                        <dd>33</dd>
-                    </dl>
-                </div>
-
-                <div class="cont" th:text="${view.lc_content}">
-                </div>
-            </div>
+      <!-- 게시글 상세페이지 시작 -->
+      <div class="board_wrap">
+         <div class="board_title">
+             <strong>I love you LG Twins</strong>
+             <p>LG Twins 선수들의 승리를 위해 응원의 말을 남겨주세요♡</p>
+         </div>
+         <div class="board_view_wrap">
+             <div class="board_view">
+                 <!-- 제목 -->
+                 <div class="title" th:text="${view.lc_title}"></div>
+                 <!-- 번호 / 날짜 -->
+                 <div class="info">
+                     <dl>
+                         <dt>번호</dt>
+                         <dd class="num" th:text="${view.lidx}"></dd>
+                     </dl>
+                     <dl>
+                         <dt>작성일</dt>
+                         <dd class="date" th:text="${view.lc_date}"></dd>
+                     </dl>
+                 </div>
+                 <!-- 내용 -->
+                 <div class="cont" th:text="${view.lc_content}"></div>
+             </div>
+             <!-- 버튼 시작-->
             <div class="bt_wrap">
                 <a class="delete-link" th:href="@{/twins/cheer/delete(id=${view.lidx})}">삭제</a>
                 <a href="/twins/cheer" class="on">목록</a>
-                <a th:href="@{/twins/cheer/modify/{id}(id=${view.lidx})}">수정</a>
-
+                <a class="modify-link" th:href="@{/twins/cheer/modify/{id}(id=${view.lidx})}">수정</a>
             </div>
+            <!-- 버튼 끝-->
         </div>
     </div>
     <!-- 게시글 상세페이지 끝 -->
-
-
       </div>
       </div>
     </section>
     
-    <!--모달부분-->
+
+    <!--취소 모달부분 시작-->
+
     <div id="deleteModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -142,7 +164,31 @@ $(document).ready(function() {
               </div>
         </div> 
      </div> 
-        <!--모달부분 끝-->
+
+   <!-- 취소 모달부분 끝-->
+
+    <!--수정 모달부분 시작-->
+    <div id="modifyModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">게시글 수정</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>게시글을 수정하려면 패스워드를 입력하세요:</p>
+                <input type="password" id="modifyPassword" class="form-control" placeholder="비밀번호 입력">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="confirmModify">수정</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+              </div>
+            </div>
+      </div> 
+   </div> 
+   <!--수정 모달부분 끝-->
+
+
     <!-- CALL TO ACTION =============================-->
     <section class="content-block" style="background-color:#00bba7;">
     <div class="container text-center">
@@ -178,4 +224,6 @@ $(document).ready(function() {
     });
     </script>
     </body>
+
     </html>
+
