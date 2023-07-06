@@ -63,4 +63,14 @@ public class cheerService {
   public void dcheerboardDel(Integer id){
     dcheerRepository.deleteById(id);
   }
+
+  public String dcheerpwcheck(Integer id, String pw){
+    String result = "" ;
+    if(dcheerRepository.findById(id).get().getDc_pw().equals(pw)){
+      result = "success";
+    } else {
+      result = "fail";
+    }
+    return result;
+  }
 }
