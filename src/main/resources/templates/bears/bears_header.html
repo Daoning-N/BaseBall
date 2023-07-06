@@ -65,7 +65,7 @@
 							<a href="/bears/new/book">예매</a>
 						</div>
 						</li>
-					<li class="propClone"><a href="/bears/info_play">경기정보</a></li>
+						<li class="propClone"><a href="#" onclick="return changeMonth(event);">경기정보</a></li>
 					<li class="propClone"><a href="/bears/cheer">응원의 한마디</a></li>
 					<li class="propClone"><a th:text="${lank}"></a></li>
 				</ul>
@@ -107,6 +107,19 @@ jQuery(document).ready(function ($) {
       }
    );
 });
+
+function changeMonth(event) {
+  event.preventDefault(); // 새로고침 방지
+  
+  var today = new Date();
+  var month = today.getMonth() + 1; 
+  var team = "OB"; 
+  var url = "http://localhost:8080/bears/Calendar.do?month=" + month + "&team=" + team;
+  window.location.href = url;
+  
+  return false; // 클릭 이벤트의 기본 동작 방지
+}
+
 </script>
 </body>
 </html>
