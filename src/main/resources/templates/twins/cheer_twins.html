@@ -88,40 +88,6 @@
 </div>
 
 <!-- 게시판 리스트 끝 -->
-
-<!-- 다온언니코드 -->
-<div class="layout">
-  <table>
-    <thead>
-    <tr>
-      <th>글 번호</th>
-      <th>제목</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <tr th:each="list : ${list}">
-      <td th:text="${list.lidx}">1</td>
-      <td><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}">제목입니다.</a></td>
-    </tr>
-    </tr>
-      <button type="button" onclick="location.href='/twins/cheer/write';">작성</button>
-    </tbody>
-  </table>
-   <!-- <a th:if="${startPage > 0}" th:href="@{/twins/cheer(page=${startPage-1})}" th:text="'<<'"></a> -->
-   <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
-      <a th:if="${page != nowPage}" th:href="@{/twins/cheer(page = ${page-1})}" th:text="${page}"></a>
-      <strong  th:if="${page == nowPage}" th:text="${page}" style="color : red"></strong>
-   </th:block>
-   <!-- <a th:if="${endPage < totalPage}" th:href="@{/twins/cheer(page=${endPage+1})}" th:text="'>>'"></a> -->
-   
-   
-   
-  </div>
-<!--언니코드끝-->
- 
-  </div>
-
   </div>
 </section>
 
