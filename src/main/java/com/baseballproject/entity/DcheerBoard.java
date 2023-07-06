@@ -1,10 +1,13 @@
 package com.baseballproject.entity;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
 
@@ -18,5 +21,7 @@ public class DcheerBoard {
   private String Dc_title;
   private String Dc_content;
   private String Dc_pw;
-  private Timestamp Dc_date;
+
+  @UpdateTimestamp
+  private LocalDateTime Dc_date;
 }
