@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="utf-8">
-<title>게시글 리스트 페이지</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="">
 <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -46,8 +45,8 @@
 <!-- 게시판 리스트 시작 -->
 <div class="board_wrap">
   <div class="board_title">
-      <strong>I love you LG Twins</strong>
-      <p>LG Twins 선수들의 승리를 위해 응원의 말을 남겨주세요♡</p>
+      <strong>I love you DS Bears</strong>
+      <p>DS Bears 선수들의 승리를 위해 응원의 말을 남겨주세요♡</p>
   </div>
   <div class="board_list_wrap">
       <div class="board_list">
@@ -58,13 +57,42 @@
               <div class="date">작성일</div>
               <div class="count">조회</div>
           </div>
-          <div th:each="list : ${list}">
-              <div class="num" th:text="${list.lidx}">1</div>
-              <div class="title"><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}">글 제목이 들어갑니다.</a></div>
+          <div>
+              <div class="num">5</div>
+              <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
               <div class="writer">김이름</div>
-              <div class="date" a th:text="${list.lc_date}"></a></div>
+              <div class="date">2021.1.15</div>
               <div class="count">33</div>
-          </div>    
+          </div>
+          <div>
+              <div class="num">4</div>
+              <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
+              <div class="writer">김이름</div>
+              <div class="date">2021.1.15</div>
+              <div class="count">33</div>
+          </div>
+          <div>
+              <div class="num">3</div>
+              <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
+              <div class="writer">김이름</div>
+              <div class="date">2021.1.15</div>
+              <div class="count">33</div>
+          </div>
+          <div>
+              <div class="num">2</div>
+              <div class="title"><a href="view.html">글 제목이 들어갑니다.</a></div>
+              <div class="writer">김이름</div>
+              <div class="date">2021.1.15</div>
+              <div class="count">33</div>
+          </div>
+          <div>
+              <div class="num">1</div>
+              <div class="title">
+                <a href="">글 제목이 들어갑니다.</a></div>
+              <div class="writer">김이름</div>
+              <div class="date">2021.1.15</div>
+              <div class="count">33</div>
+          </div>
       </div>
       <div class="board_page">
           <a href="#" class="bt first"><<</a>
@@ -77,16 +105,12 @@
           <a href="#" class="bt next">></a>
           <a href="#" class="bt last">>></a>
       </div>
-      <!-- 버튼 시작 -->
       <div class="bt_wrap">
-          <a href="/twins/cheer/write" class="on">등록</a>
-
-          <!-- 버튼 끝 -->
-
+          <a href="/bears/cheer/write" class="on">등록</a>
+          <!--<a href="#">수정</a>-->
       </div>
   </div>
 </div>
-
 <!-- 게시판 리스트 끝 -->
 
 <!-- 다온언니코드 -->
@@ -101,14 +125,14 @@
     <tbody>
     <tr>
     <tr th:each="list : ${list}">
-      <td th:text="${list.lidx}">1</td>
-      <td><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}">제목입니다.</a></td>
+      <td th:text="${list.didx}">1</td>
+      <td><a th:text="${list.dc_title}" th:href="@{/bears/cheer/view(id=${list.didx})}">제목입니다.</a></td>
     </tr>
     </tr>
-      <button type="button" onclick="location.href='/twins/cheer/write';">작성</button>
+      <button type="button" onclick="location.href='/bears/cheer/write';">작성</button>
     </tbody>
   </table>
-   <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
+  <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
       <a th:if="${page != nowPage}" th:href="@{/twins/cheer(page = ${page-1})}" th:text="${page}"></a>
       <strong  th:if="${page == nowPage}" th:text="${page}" style="color : red"></strong>
    </th:block>
@@ -116,7 +140,6 @@
 <!--언니코드끝-->
  
   </div>
-
   </div>
 </section>
 
@@ -127,7 +150,7 @@
 <div class="row">
    <div class="col-sm-10 col-sm-offset-1">
       <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
-         <h1 class="callactiontitle"> Promote Items Area <a href="/login">Give</a> Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
+         <h1 class="callactiontitle"> Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
          </h1>
       </div>
    </div>
