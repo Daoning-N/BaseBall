@@ -40,6 +40,11 @@ private final WinService winService;
     return "./bears/info_py_bear";
     }
 
+    @GetMapping(value = "/bears/info_py2")
+    public String bears_info_py2() {
+    return "./bears/info_py_bear2";
+    }
+
     @GetMapping(value = "/bears/new/book")
     public String bears_book() {
 
