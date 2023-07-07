@@ -63,10 +63,12 @@
               <div class="num" th:text="${list.lidx}"></div>
             <!-- 제목 -->
               <div class="title"><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}"></a></div>
+              <td><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}"></a></td>
             <!-- 날짜 -->
               <div class="date" a th:text="${list.lc_date}"></a></div>
           </div>    
       </div>
+      
       <!-- 페이징 -->
       <div style="text-align: center; margin-top: 20px; font-size: 20px;">
          <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
