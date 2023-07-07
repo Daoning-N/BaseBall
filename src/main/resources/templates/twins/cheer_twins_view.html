@@ -134,6 +134,8 @@ $(document).ready(function() {
                 <a class="modify-link" th:href="@{/twins/cheer/modify/{id}(id=${view.lidx})}">수정</a>
             </div>
             <!-- 버튼 끝-->
+            <a th:if="${session.loginEmail}" th:href="@{/twins/cheer/delete(id=${view.lidx})}">삭제</a>
+            <a th:if="${session.loginEmail}" th:href="@{/twins/cheer/modify/{id}(id=${view.lidx})}">수정</a>
         </div>
     </div>
     <!-- 게시글 상세페이지 끝 -->

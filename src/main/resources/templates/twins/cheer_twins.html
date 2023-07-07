@@ -68,9 +68,16 @@
           </div>    
       </div>
       <!-- 페이징 -->
+      <div style="text-align: center; margin-top: 20px; font-size: 20px;">
+         <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
+            <a th:if="${page != nowPage}" th:href="@{/twins/cheer(page = ${page-1})}" th:text="${page}"></a>
+            <strong  th:if="${page == nowPage}" th:text="${page}" style="color : #C0324A"></strong>
+         </th:block>        
+      </div>
+      <!--
       <div class="board_page">
-          <a href="#" class="bt first"><<</a>
-          <a href="#" class="bt prev"><</a>
+          <a href="#" class="bt first"></a>
+          <a href="#" class="bt prev"></a>
           <a href="#" class="num on">1</a>
           <a href="#" class="num">2</a>
           <a href="#" class="num">3</a>
@@ -79,6 +86,7 @@
           <a href="#" class="bt next">></a>
           <a href="#" class="bt last">>></a>
       </div>
+      -->
       <!-- 버튼 시작 -->
       <div class="bt_wrap">
           <a href="/twins/cheer/write" class="on">등록</a>
