@@ -24,8 +24,10 @@ private final WinService winService;
     // 두산 매핑 시작
 
     @GetMapping(value = "/bears")
-    public String bears() {
-
+    public String bears(Model model) throws Exception{
+        String win = winService.OBWin();
+        System.out.println("두산 순위 "+win);
+        model.addAttribute("lank", win);
         return "./bears/index_bear";
     }
 
@@ -76,10 +78,7 @@ private final WinService winService;
     }
 
     @GetMapping(value = "/bears/bears_header")
-    public String bears_header(Model model) throws Exception {
-        String win = winService.OBWin();
-        System.out.println("두산 순위 "+win);
-        model.addAttribute("lank", win);
+    public String bears_header(Model model)  {
         return "./bears/bears_header";
     }
 
@@ -92,8 +91,10 @@ private final WinService winService;
 
     @GetMapping(value = "/twins")
 
-    public String twins() {
-
+    public String twins(Model model) throws Exception{
+        String win = winService.LGWin();
+        System.out.println("LG 순위 "+win);
+        model.addAttribute("lank", win);
         return "./twins/index_twin";
     }
 
@@ -145,10 +146,8 @@ private final WinService winService;
     }
 
     @GetMapping(value = "/twins/twins_header")
-    public String twins_header(Model model) throws Exception{
-        String win = winService.LGWin();
-        System.out.println("LG 순위 "+win);
-        model.addAttribute("lank", win);
+    public String twins_header() {
+
         return "./twins/twins_header";
     }
 
