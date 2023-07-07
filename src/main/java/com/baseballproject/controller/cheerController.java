@@ -89,6 +89,7 @@ public class cheerController {
   public String lcheerpwcheck(@RequestParam("id") Integer id, @RequestParam("pw") String pw, Model model, RedirectAttributes redirect){
     String result = cheerService.lcheerpwcheck(id, pw);
     if(result.equals("fail")){
+      redirect.addAttribute("result", result);
       return "redirect:/twins/cheer";
     } else {
 
@@ -159,6 +160,7 @@ public class cheerController {
   public String dcheerpwcheck(@RequestParam("id") Integer id, @RequestParam("pw") String pw, Model model, RedirectAttributes redirect){
     String result = cheerService.dcheerpwcheck(id, pw);
     if(result.equals("fail")){
+      redirect.addAttribute("result", result);
       return "redirect:/bears/cheer";
     } else {
 

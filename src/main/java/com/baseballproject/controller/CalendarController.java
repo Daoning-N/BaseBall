@@ -26,4 +26,12 @@ public class CalendarController {
     model.addAttribute("data", dataList);
     return "./bears/info_play_bear";
   }
+
+  @GetMapping("/twins/Calendar.do")
+  public String tCalendar(Model model, @RequestParam String month, @RequestParam String team) throws Exception {
+    System.out.println(month + team);
+    List<Calendar> dataList = calendarService.gettData(month, team);
+    model.addAttribute("data", dataList);
+    return "./twins/info_play_twins";
+  }
 }
