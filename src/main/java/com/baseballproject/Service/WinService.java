@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class WinService {
-    public String LGWin() throws IOException {
+  public String LGWin() throws IOException {
     System.out.println("test1");
     String URL = "https://sports.news.naver.com/kbaseball/record/index?category=kbo";
     String LGWin = "";
@@ -23,14 +23,14 @@ public class WinService {
     Document document = Jsoup.connect(URL).get();
 
     Elements contents = document.getElementById("regularTeamRecordList_table").children();
-    
-    for(Element content : contents) {
+
+    for (Element content : contents) {
       lank.add(content.getElementsByTag("tr").select("th").select("strong").text().toString());
       team.add(content.getElementsByTag("td").select("span").get(1).text().toString());
-      
+
     }
-    for(int i = 0; i<lank.size();i++){
-      if(team.get(i).equals("LG")){
+    for (int i = 0; i < lank.size(); i++) {
+      if (team.get(i).equals("LG")) {
         index_win = i;
       }
     }
@@ -39,7 +39,6 @@ public class WinService {
 
     return LGWin;
   }
-
 
   public String OBWin() throws IOException {
     System.out.println("test2");
@@ -52,14 +51,14 @@ public class WinService {
     Document document = Jsoup.connect(URL).get();
 
     Elements contents = document.getElementById("regularTeamRecordList_table").children();
-    
-    for(Element content : contents) {
+
+    for (Element content : contents) {
       lank.add(content.getElementsByTag("tr").select("th").select("strong").text().toString());
       team.add(content.getElementsByTag("td").select("span").get(1).text().toString());
-      
+
     }
-    for(int i = 0; i<lank.size();i++){
-      if(team.get(i).equals("두산")){
+    for (int i = 0; i < lank.size(); i++) {
+      if (team.get(i).equals("두산")) {
         index_win = i;
       }
     }

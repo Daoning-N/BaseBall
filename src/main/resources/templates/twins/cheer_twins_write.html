@@ -19,7 +19,9 @@
      $('#header').load('../twins_header');
      $('#footer').load('../twins_footer');
    });
+
 // 유효성 검사 시작
+
    $(document).ready(function() {
     // 비밀번호 유효성 검사 함수
     function validatePassword() {
@@ -28,6 +30,7 @@
       if (password.length >= 4) {
         // 비밀번호가 4자리가 아닌 경우
         alert('비밀번호를 입력해주세요.');
+
         return false; // 폼 제출 중지
       }
 
@@ -45,7 +48,9 @@
       }
     });
   });
+
   // 유효성 검사 끝
+
    </script>
 <!-- CSS 링크 추가 -->
 <link href="/css/cheer_twins.css" rel="stylesheet">
