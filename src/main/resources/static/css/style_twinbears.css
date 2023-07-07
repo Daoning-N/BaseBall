@@ -62,6 +62,18 @@
    flex-direction: column; 
  }
 
+ .container3 {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  height: auto;
+  margin: 0 auto; 
+  display: flex;
+  justify-content: flex-start; 
+  align-items: left;
+  flex-direction: column; 
+}
  .shape {
    width: 20%;
    height: 60%;
@@ -94,6 +106,13 @@ color: rgb(28, 1, 110);
    animation-duration: 4s;
    animation-fill-mode: forwards;
  }
+
+ .container3 {
+  opacity: 0; /* 초기에 숨김 */
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
 
  @keyframes fadeIn {
    0% { opacity: 0; }

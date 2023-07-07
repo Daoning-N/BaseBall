@@ -18,59 +18,39 @@
 	  $('#footer').load('./twins/twins_footer');
 	});
 	</script>
- 
- 
+
+	
  </head>
  <body>
-   
 	<div id="header"></div>
-
-
-
-
 <!-- STEPS =============================-->
 
 <div class="item content">
 	<div class="container toparea">
 		<div class="row text-center">
-			<div class="col-md-4">
-				<div class="col editContent">
-					<span class="numberstep"><i class="fa fa-shopping-cart"></i></span>
-					<h3 class="numbertext">Choose our Products</h3>
-					<p>
-						 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-					</p>
-				</div>
-				<!-- /.col-md-4 -->
-			</div>
-			<!-- /.col-md-4 col -->
-			<div class="col-md-4 editContent">
-				<div class="col">
-					<span class="numberstep"><i class="fa fa-gift"></i></span>
-					<h3 class="numbertext">Pay with PayPal or Card</h3>
-					<p>
-						 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-					</p>
-				</div>
-				<!-- /.col -->
-			</div>
-			<!-- /.col-md-4 col -->
-			<div class="col-md-4 editContent">
-				<div class="col">
-					<span class="numberstep"><i class="fa fa-download"></i></span>
-					<h3 class="numbertext">Get Instand Download</h3>
-					<p>
-						 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-					</p>
-				   </div>
-				</div>
+			<!-- 경기순위 표 시작-->
+			<table id="products">
+				<thead>
+				  <tr>
+					<th scope="col">팀명</th>
+					<th scope="col">순위</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr>
+					<td><img src="/LG_cheering_img/LG_logo.jpg" alt="Lg Twins 로고" 
+						style="width:100px; margin-left:30px"> Lg Twins</td>
+					<td >1</td>
+				  </tr>
+				</tbody>
+				</table>
+				<!-- 경기순위 표 종료-->
 			</div>
 		</div>
 	</div>
 	
 
-	
-	
+
 	<!-- LATEST ITEMS =============================-->
 <section class="item content">
 	<div class="container">
@@ -79,17 +59,59 @@
 			</div>
 			<div class="wow-hr type_short">
 				<span class="wow-hr-h">
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
-				<i class="fa fa-star"></i>
+					<img src="/images/baseball.png" alt="character" style="width: 20px" class="animated-img">
+					<img src="/images/baseball.png" alt="character" style="width: 20px" class="animated-img">
+					<img src="/images/baseball.png" alt="character" style="width: 20px" class="animated-img">
 				</span>
 			</div>s
 		</div>
 	</div>
-	
-			<!-- 슬라이더 쇼 시작 -->
 
-			<!-- 슬라이더 쇼 끝 -->				
+		
+			<!-- 이미지 슬라이드쇼 시작 -->
+			<div class="slide_wrap">
+				<div class="slide_show">
+				  <div class="slide_img">
+					<div class="slide">
+					  <figure>
+						<img src="/lg_img/LgSlide1.png" alt="Lg Twins 사진1">
+					  </figure>
+					</div>
+					<div class="slide">
+					  <figure>
+						<img src="/lg_img/LgSlide2.png" alt="Lg Twins 사진2">
+					  </figure>
+					</div>
+					<div class="slide">
+					  <figure>
+						<img src="/lg_img/LgSlide3.jpg" alt="Lg Twins 사진3">
+					  </figure>
+					</div>
+					<div class="slide">
+					  <figure>
+						<img src="/lg_img/LgSlide4.jpg" alt="Lg Twins 사진4">
+					  </figure>
+					</div>
+					<div class="slide">
+					  <figure>
+						<img src="/lg_img/LgSlide5.jpg" alt="Lg Twins 사진5">
+					  </figure>
+					</div>
+				  </div>
+				</div>
+				<div class="slide_btn">
+				  <a href="#" class="prev">&#8592;</a>
+				  <a href="#" class="next">&#8594;</a>
+				</div>
+				<div class="slide_dot"></div>
+				<div class="slide_count">
+				  <span class="currentIndex">0</span> /
+				  <span class="slideCount">0</span>
+				</div>
+			  </div>
+			  <br>
+			<!-- 슬라이더 슬라이드쇼 끝 -->				
+
 		
 <!-- CALL TO ACTION =============================-->
 <section class="content-block" style="background-color:#00bba7;">
@@ -113,6 +135,9 @@
 <script src="js/jquery-.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/anim.js"></script>
+<!-- js추가 -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script><script  src="js/slide.js"></script>
 <script>
 //----HOVER CAPTION---//	  
 jQuery(document).ready(function ($) {
