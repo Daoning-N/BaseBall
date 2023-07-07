@@ -239,7 +239,7 @@ const monthParam = urlParams.get('month');
 
 // '두산'이라는 이름의 쿼리 매개변수 값을 가져옴
 
-const teamParam = urlParams.get('team') ?? 'OB';
+const teamParam = urlParams.get('team') ?? 'LG';
 ////////////////////////////////////////////////////////////////////////////////
 
 let currentDate;
@@ -373,8 +373,8 @@ function updateURL(month, team) {
   const currentMonth = currentDate.getMonth() + 1;
 
   // 현재 URL이 원하는 주소와 다를 경우에만 리다이렉션
-  if (currentURL !== `://localhoshttpt:8080/bears/Calendar.do?month=${currentMonth}&team=OB`) {
-    window.history.replaceState({}, '', `/bears/Calendar.do?month=${currentMonth}&team=OB`); // 현재 url을 원하는 주소로 변경
+  if (currentURL !== `://localhoshttpt:8080/bears/Calendar.do?month=${currentMonth}&team=LG`) {
+    window.history.replaceState({}, '', `/bears/Calendar.do?month=${currentMonth}&team=LG`); // 현재 url을 원하는 주소로 변경
   }
 };
 
@@ -429,8 +429,8 @@ window.onload = function() {
   const currentMonth = currentDate.getMonth() + 1;
 
   // 현재 URL이 원하는 주소와 다를 경우에만 리다이렉션
-  if (currentURL !== `http://localhost:8080/twins/Calendar.do?month=${currentMonth}&team=OB`) {
-    window.history.replaceState({}, '', `/twins/Calendar.do?month=${currentMonth}&team=OB`); // 현재 URL을 원하는 주소로 변경
+  if (currentURL !== `http://localhost:8080/twins/Calendar.do?month=${currentMonth}&team=LG`) {
+    window.history.replaceState({}, '', `/twins/Calendar.do?month=${currentMonth}&team=LG`); // 현재 URL을 원하는 주소로 변경
   }
 };
 
