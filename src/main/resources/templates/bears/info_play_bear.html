@@ -118,6 +118,20 @@ h2#month-year {
   </div>
 </div>
 
+<table>
+  <tr>
+      <th>Date</th>
+      <th>Team Left</th>
+      <th>Team Right</th>
+      <th>Time</th>
+  </tr>
+  <tr th:each="calendar : ${data}">
+      <td><span th:text="${calendar.date}"></span></td>
+      <td><span th:text="${calendar.team_lft}"></span></td>
+      <td><span th:text="${calendar.team_rgt}"></span></td>
+      <td><span th:text="${calendar.time}"></span></td>
+  </tr>
+</table>
 <!-- FOOTER =============================-->
 <div id="footer"></div>
 <!-- Load JS here for greater good =============================-->
@@ -299,3 +313,6 @@ function updateURL(month, team) {
 </script>
 </body>
 </html>
+
+
+
