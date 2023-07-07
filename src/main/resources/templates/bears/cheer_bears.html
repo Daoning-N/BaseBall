@@ -59,19 +59,19 @@
             <!-- 게시판 내용 부분 -->
              <div th:each="list : ${list}">
                <!-- 번호 -->
-                 <div class="num" th:text="${list.lidx}"></div>
+                 <div class="num" th:text="${list.didx}"></div>
                <!-- 제목 -->
-                 <div class="title"><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}"></a></div>
-                 <td><a th:text="${list.lc_title}" th:href="@{/twins/cheer/view(id=${list.lidx})}"></a></td>
+                 <div class="title"><a th:text="${list.Dc_title}" th:href="@{/bears/cheer/view(id=${list.didx})}"></a></div>
+                 <td><a th:text="${list.Dc_title}" th:href="@{/bears/cheer/view(id=${list.didx})}"></a></td>
                <!-- 날짜 -->
-                 <div class="date" a th:text="${list.lc_date}"></a></div>
+                 <div class="date" a th:text="${list.Dc_date}"></a></div>
              </div>    
          </div>
          
          <!-- 페이징 -->
          <div style="text-align: center; margin-top: 20px; font-size: 20px;">
             <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
-               <a th:if="${page != nowPage}" th:href="@{/twins/cheer(page = ${page-1})}" th:text="${page}"></a>
+               <a th:if="${page != nowPage}" th:href="@{/bears/cheer(page = ${page-1})}" th:text="${page}"></a>
                <strong  th:if="${page == nowPage}" th:text="${page}" style="color : #C0324A"></strong>
             </th:block>        
          </div>
@@ -90,7 +90,7 @@
          -->
          <!-- 버튼 시작 -->
          <div class="bt_wrap">
-             <a href="/twins/cheer/write" class="on">등록</a>
+             <a href="/bears/cheer/write" class="on">등록</a>
              <!-- 버튼 끝 -->
          </div>
       </div>

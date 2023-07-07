@@ -3,44 +3,6 @@ Scorilo 1.0.1 - HTML Template by WowThemes.net
 Visit: https://www.wowthemes.net
 ================================================== */
 
-/* 순위표 시작*/
-body{
-	font-size:12px; 
-	font-family:arial; 
-	text-align:center;
-  }
-  
-  table{
-	width:800px;
-	height:200px;
-	border:1px solid #999; 
-	margin:0 auto; 
-  }
-  
-  td, th{
-	padding:20px;
-  }
-  
-  th{
-	border:1px solid #999; 
-	color:#ffffff;
-	background:#a71d1a;
-	text-align: center;
-	font-size:18px;
-	font-weight: 20px;
-  }
-  
-  td{
-	font-size:25px;
-	font-weight: bold;
-	border:1px solid #dedede;
-  }
-  
-  #nav{
-	margin:10px 0;
-  }  
-/* 순위표 끝 */
-
 /* 슬라이드쇼 효과 시작*/
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
 

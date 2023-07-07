@@ -1,15 +1,230 @@
+<!--비밀번호 데이터-->
+<dt for="exampleFormControlTextarea1">비밀번호</dt>
+       <dd><input type="password" placeholder="비밀번호 입력" id="exampleFormControlpw" name="Dc_pw" maxlength='4'></dd>
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>게시글 상세 페이지</title>
-</head>
-<body>
-<h1 th:text="${view.dc_title}">제목</h1>
-<p th:text="${view.dc_content}">내용</p>
-    <label for="exampleFormControlTextarea1" class="form-label">PW</label><br> <!--숫자만 입력 가능하게, 비밀번호 입력해야 글삭제 가능하게-->
-    <input type="password" id="password" name="password"  maxlength='4' placeholder="Your password"></input>
-    <a th:href="@{/bears/cheer/modify/{id}(id=${view.didx})}">수정</a>
-    <a th:href="@{/bears/cheer/delete(id=${view.didx})}">삭제</a>
-</body>
-</html>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/cheer.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style_twinbears.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+       $(function() {
+         
+         $('#header').load('../bears_header');
+         $('#footer').load('../bears_footer');
+       });
+
+// 1. 삭제 모달 스크립트
+  $(document).ready(function() {
+  // 삭제 링크 클릭 시 모달 표시
+  $('.delete-link').click(function(e) { //삭제 코드의 ID값 delte-link로 설정함
+    e.preventDefault();
+    $('#deleteModal').modal('show');
+  });
+
+  // 삭제 버튼 클릭 시 패스워드 확인
+  $(document).ready(function() {
+  // 삭제 버튼 클릭 시 패스워드 확인
+  $('#confirmDelete').click(function() {
+    var password = $('#deletePassword').val();
+    // 패스워드 유효성 검사 및 삭제 요청
+    if (password === '1234') {
+      // 패스워드가 일치하는 경우 게시글 삭제 요청 수행
+      var deleteUrl = $(this).prev('.delete-link').attr('href');
+      // 모달 닫기
+      $('#deleteModal').modal('hide');
+      setTimeout(function() {
+        window.location.href = "/twins/cheer"; // 지연 후 리다이렉트
+      }, 500); // 필요에 따라 지연 시간을 조정하세요
+    } else {
+      alert('잘못된 패스워드입니다.');
+    }
+  });
+});
+});
+
+// 2. 수정 모달 스크립트
+$(document).ready(function() {
+  // 삭제 링크 클릭 시 모달 표시
+  $('.modify-link').click(function(e) { //삭제 코드의 ID값 delte-link로 설정함
+    e.preventDefault();
+    $('#modifyModal').modal('show');
+  });
+
+  // 삭제 버튼 클릭 시 패스워드 확인
+  $(document).ready(function() {
+  // 삭제 버튼 클릭 시 패스워드 확인
+  $('#confirmModify').click(function() {
+    var password = $('#modifyPassword').val();
+    // 패스워드 유효성 검사 및 삭제 요청
+    if (password === '1234') {
+      // 패스워드가 일치하는 경우 게시글 삭제 요청 수행
+      var deleteUrl = $(this).prev('.modify-link').attr('href');
+      // 모달 닫기
+      $('#modifyModal').modal('hide');
+      setTimeout(function() {
+        window.location.href = "/twins/cheer"; // 지연 후 리다이렉트
+      }, 500); // 필요에 따라 지연 시간을 조정하세요
+    } else {
+      alert('잘못된 패스워드입니다.');
+    }
+  });
+});
+});
+
+       </script>
+    <!-- CSS 링크 추가 -->
+    <link href="/css/cheer_twins.css" rel="stylesheet">
+    </head>
+    <body>
+      
+       <div id="header"></div>
+      
+    <!-- CONTENT =============================-->
+    <section class="item content">
+    <div class="container toparea">
+       <div class="underlined-title">
+          <div class="editContent">
+             <h1 class="text-center latestitems">응원의 한마디</h1>
+             </div>
+    
+          <div class="wow-hr type_short">
+             <span class="wow-hr-h">
+             <i class="fa fa-star"></i>
+             <i class="fa fa-star"></i>
+             <i class="fa fa-star"></i>
+             </span>
+          </div>
+    
+      <!-- 게시글 상세페이지 시작 -->
+      <div class="board_wrap">
+         <div class="board_title">
+            <strong>I love you DooSan Bears</strong>
+            <p> 선수들의 승리를 위해 응원의 말을 남겨주세요♡</p>
+         </div>
+         <div class="board_view_wrap">
+             <div class="board_view">
+                 <!-- 제목 -->
+                 <div class="title" th:text="${view.Dc_title}"></div>
+                 <!-- 번호 / 날짜 -->
+                 <div class="info">
+                     <dl>
+                         <dt>번호</dt>
+                         <dd class="num" th:text="${view.didx}"></dd>
+                     </dl>
+                     <dl>
+                         <dt>작성일</dt>
+                         <dd class="date" th:text="${view.Dc_date}"></dd>
+                     </dl>
+                 </div>
+                 <!-- 내용 -->
+                 <div class="cont" th:text="${view.Dc_content}"></div>
+             </div>
+             <!-- 버튼 시작-->
+            <div class="bt_wrap">
+                <a class="delete-link" th:href="@{/bears/cheer/delete(id=${view.didx})}">삭제</a>
+                <a href="/bears/cheer" class="on">목록</a>
+                <a class="modify-link" th:href="@{/bears/cheer/modify/{id}(id=${view.didx})}">수정</a>
+            </div>
+            <!-- 버튼 끝-->
+            <a th:if="${session.loginEmail}" th:href="@{/bears/cheer/delete(id=${view.didx})}">삭제</a>
+            <a th:if="${session.loginEmail}" th:href="@{/bears/cheer/modify/{id}(id=${view.didx})}">수정</a>
+        </div>
+    </div>
+    <!-- 게시글 상세페이지 끝 -->
+      </div>
+      </div>
+    </section>
+    
+
+    <!--취소 모달부분 시작-->
+
+    <div id="deleteModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">게시글 삭제</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p>게시글을 삭제하려면 패스워드를 입력하세요:</p>
+                  <input type="password" id="deletePassword" class="form-control" placeholder="비밀번호 입력">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" id="confirmDelete">삭제</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                </div>
+              </div>
+        </div> 
+     </div> 
+
+   <!-- 취소 모달부분 끝-->
+
+    <!--수정 모달부분 시작-->
+    <div id="modifyModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">게시글 수정</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>게시글을 수정하려면 패스워드를 입력하세요:</p>
+                <input type="password" id="modifyPassword" class="form-control" placeholder="비밀번호 입력">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="confirmModify">수정</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+              </div>
+            </div>
+      </div> 
+   </div> 
+   <!--수정 모달부분 끝-->
+
+
+    <!-- CALL TO ACTION =============================-->
+    <section class="content-block" style="background-color:#00bba7;">
+    <div class="container text-center">
+    <div class="row">
+       <div class="col-sm-10 col-sm-offset-1">
+          <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
+             <h1 class="callactiontitle"> Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
+             </h1>
+          </div>
+       </div>
+    </div>
+    </div>
+    </section>
+    
+    <!-- FOOTER =============================-->
+    <div id="footer"></div>
+    
+    <!-- Load JS here for greater good =============================-->
+    <script src="/js/jquery-.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/anim.js"></script>
+    <script>
+    //----HOVER CAPTION---//     
+    jQuery(document).ready(function ($) {
+       $('.fadeshop').hover(
+          function(){
+             $(this).find('.captionshop').fadeIn(150);
+          },
+          function(){
+             $(this).find('.captionshop').fadeOut(150);
+          }
+       );
+    });
+    </script>
+    </body>
+
+    </html>
