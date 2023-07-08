@@ -10,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700" rel="stylesheet">
 <link rel="stylesheet" href="/css/style_twinbears.css">
-<link rel="stylesheet" href="/css/style_twinbears.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
    $(function() {
@@ -22,9 +21,11 @@
 
 
 </head>
+
 <body>
   
    <div id="header"></div>
+   
 
 <!-- CONTENT =============================-->
 <section class="item content" >
@@ -48,7 +49,7 @@
       <table class="table table-sm">
         <thead>
           <tr>
-            <th width="12%;">사진</th>
+            <th width="10%;">사진</th>
             <th width="15%;">규칙</th>
             <th width="85%;">설명</th>
           </tr>
@@ -93,6 +94,7 @@
 
 <!-- FOOTER =============================-->
 <div id="footer"></div>
+
 <!-- Load JS here for greater good =============================-->
 <script src="/js/jquery-.js"></script>
 <script src="/js/bootstrap.min.js"></script>
@@ -113,12 +115,12 @@ jQuery(document).ready(function ($) {
 function startAnimation() {
       var container = document.querySelector('.container2');
       container.style.animationPlayState = 'running';
-    }
+    }  
+    window.onload = startAnimation;
+
 
     
-    window.onload = startAnimation;
 </script>
-
 
 </body>
 </html>
