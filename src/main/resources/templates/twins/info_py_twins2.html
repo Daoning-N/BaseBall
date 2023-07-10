@@ -16,35 +16,37 @@
    $(function() {
      
      $('#header').load('./twins_header');
-     $('#footer').load('../twins_footer');
+     $('#footer').load('./twins_footer');
    });
    </script>
 
+<style>
+.more_button{
+           width:100%;
+           padding:20px 0;
+           }
+</style>
 
 </head>
 <body>
   
    <div id="header"></div>
   
-
-
-
-
-
 <!-- CONTENT =============================-->
 <section class="item content">
-<div class="container toparea">
-   <div class="underlined-title">
-      <div class="editContent">
-         <h1 class="text-center latestitems">타자</h1>
+   <div class="container toparea">
+      <div class="underlined-title">
+         <div class="editContent">
+            <h1 class="text-center latestitems">타자</h1>
+            
+            <!-- 페이지 이동 버튼 -->
+            <div class="btn_group" style="float: right; margin-right: 80px;">
+            <button class="btn1" onclick="location.href='/twins/info_py'">투수</button >
+            <button class="btn2" onclick="location.href='/twins/info_py2'">타자</button >
+            <p style="margin-bottom:30px;"></p>
+            </div>
+            <!-- 버튼 끝 -->
          
-         <!-- 페이지 이동 버튼 -->
-         <div class="btn_group" style="float: right; margin-right: 80px;">
-         <button class="btn1" onclick="location.href='/twins/info_py'">투수</button >
-         <button class="btn2" onclick="location.href='/twins/info_py2'">타자</button >
-         <p style="margin-bottom:30px;"></p>
-         </div>
-         <!-- 버튼 끝 -->
          </div>
       <div class="wow-hr type_short">
          <span class="wow-hr-h">
@@ -54,19 +56,20 @@
          </span>
       </div>
    </div>
-   <div class="row">
+   
+   <div id="row">   
    <!--이미지 박스 시작 (1)-->
       <div class="col-md-4">
          <div class="productbox">
             <div class="fadeshop">
-               <span class="maxproduct"><img src="/LG_cheering_img/1.webp" alt=""></span>
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher1.webp" alt=""></span>
             </div>
             <div class="product-details">
                <a href="#">
-               <h1>이윤승</h1>
+               <h1>채지선</h1>
                </a>
                <span class="price">
-               <span class="edd_price">응원단장</span>
+               <span class="edd_price">등번호 : 43</span>
                </span>
             </div>
          </div>
@@ -75,14 +78,14 @@
       <div class="col-md-4">
          <div class="productbox">
             <div class="fadeshop">
-               <span class="maxproduct"><img src="/LG_cheering_img/2.webp" alt=""></span>
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher2.webp" alt=""></span>
             </div>
             <div class="product-details">
                <a href="#">
-               <h1>황건하</h1>
+               <h1>송승기</h1>
                </a>
                <span class="price">
-               <span class="edd_price">장내아나운서</span>
+               <span class="edd_price">등번호 : 48</span>
                </span>
             </div>
          </div>
@@ -91,32 +94,30 @@
       <div class="col-md-4">
          <div class="productbox">
             <div class="fadeshop">
-               <span class="maxproduct"><img src="/LG_cheering_img/3.webp" alt=""></span>
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher3.webp" alt=""></span>
             </div>
             <div class="product-details">
                <a href="#">
-               <h1>차영현</h1>
+               <h1>함덕주</h1>
                </a>
                <span class="price">
-               <span class="edd_price">치어리더</span>
+               <span class="edd_price">등번호 : 11</span>
                </span>
             </div>
          </div>
       </div>
       <!-- (4) -->
-      </div>
-      <div class="row">
          <div class="col-md-4">
             <div class="productbox">
                <div class="fadeshop">
-                  <span class="maxproduct"><img src="/LG_cheering_img/4.png" alt=""></span>
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher4.webp" alt=""></span>
                </div>
                <div class="product-details">
                   <a href="#">
-                  <h1>원민주</h1>
+                  <h1>백승현</h1>
                   </a>
                   <span class="price">
-                  <span class="edd_price">치어리더</span>
+                  <span class="edd_price">등번호 : 61</span>
                   </span>
                </div>
             </div>
@@ -125,14 +126,14 @@
       <div class="col-md-4">
          <div class="productbox">
             <div class="fadeshop">
-               <span class="maxproduct"><img src="/LG_cheering_img/5.png" alt=""></span>
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher5.webp" alt=""></span>
             </div>
             <div class="product-details">
                <a href="#">
-               <h1>이진</h1>
+               <h1>플럿코</h1>
                </a>
                <span class="price">
-               <span class="edd_price">치어리더</span>
+               <span class="edd_price">등번호 : 45</span>
                </span>
             </div>
          </div>
@@ -141,32 +142,30 @@
       <div class="col-md-4">
          <div class="productbox">
             <div class="fadeshop">
-               <span class="maxproduct"><img src="/LG_cheering_img/6.png" alt=""></span>
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher6.webp" alt=""></span>
             </div>
             <div class="product-details">
                <a href="#">
-               <h1>임혜진</h1>
+               <h1>송은범</h1>
                </a>
                <span class="price">
-               <span class="edd_price">치어리더</span>
+               <span class="edd_price">등번호 : 46</span>
                </span>
             </div>
          </div>
       </div>
       <!-- (7) -->
-      </div>
-      <div class="row">
          <div class="col-md-4">
             <div class="productbox">
                <div class="fadeshop">
-                  <span class="maxproduct"><img src="/LG_cheering_img/7.png" alt=""></span>
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher7.webp" alt=""></span>
                </div>
                <div class="product-details">
                   <a href="#">
-                  <h1>진수화</h1>
+                  <h1>최동환</h1>
                   </a>
                   <span class="price">
-                  <span class="edd_price">치어리더</span>
+                  <span class="edd_price">등번호 : 13</span>
                   </span>
                </div>
             </div>
@@ -175,14 +174,14 @@
       <div class="col-md-4">
          <div class="productbox">
             <div class="fadeshop">
-               <span class="maxproduct"><img src="/LG_cheering_img/8.png" alt=""></span>
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher8.webp" alt=""></span>
             </div>
             <div class="product-details">
                <a href="#">
-               <h1>오윤솔</h1>
+               <h1>이우찬</h1>
                </a>
                <span class="price">
-               <span class="edd_price">치어리더</span>
+               <span class="edd_price">등번호 : 37</span>
                </span>
             </div>
          </div>
@@ -191,33 +190,357 @@
       <div class="col-md-4">
          <div class="productbox">
             <div class="fadeshop">
-               <span class="maxproduct"><img src="/LG_cheering_img/9.png" alt=""></span>
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher9.webp" alt=""></span>
             </div>
             <div class="product-details">
                <a href="#">
-               <h1>김이서</h1>
+               <h1>이상규</h1>
                </a>
                <span class="price">
-               <span class="edd_price">치어리더</span>
+               <span class="edd_price">등번호 : 48</span>
                </span>
             </div>
          </div>
       </div>
-      <!--이미지 박스 끝-->
-   </div>
-</div>
-</div>
-</section>
-
-<!-- CALL TO ACTION =============================-->
-<section class="content-block" style="background-color:#00bba7;">
-<div class="container text-center">
-<div class="row">
-   <div class="col-sm-10 col-sm-offset-1">
-      <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
-         <h1 class="callactiontitle"> Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
-         </h1>
+       <!-- (10) -->
+       <div class="col-md-4">
+         <div class="productbox">
+            <div class="fadeshop">
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher10.webp" alt=""></span>
+            </div>
+            <div class="product-details">
+               <a href="#">
+               <h1>김진성</h1>
+               </a>
+               <span class="price">
+               <span class="edd_price">등번호 : 42</span>
+               </span>
+            </div>
+         </div>
       </div>
+     <!-- (11) -->
+      <div class="col-md-4">
+         <div class="productbox">
+            <div class="fadeshop">
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher11.webp" alt=""></span>
+            </div>
+            <div class="product-details">
+               <a href="#">
+               <h1>고우석</h1>
+               </a>
+               <span class="price">
+               <span class="edd_price">등번호 : 43</span>
+               </span>
+            </div>
+         </div>
+      </div>
+      <!-- (12) -->
+      <div class="col-md-4">
+         <div class="productbox">
+            <div class="fadeshop">
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher12.webp" alt=""></span>
+            </div>
+            <div class="product-details">
+               <a href="#">
+               <h1>임찬규</h1>
+               </a>
+               <span class="price">
+               <span class="edd_price">등번호 : 48</span>
+               </span>
+            </div>
+         </div>
+      </div>
+       <!-- (13) -->
+       <div class="col-md-4">
+         <div class="productbox">
+            <div class="fadeshop">
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher13.webp" alt=""></span>
+            </div>
+            <div class="product-details">
+               <a href="#">
+               <h1>박명근</h1>
+               </a>
+               <span class="price">
+               <span class="edd_price">등번호 : 43</span>
+               </span>
+            </div>
+         </div>
+      </div>
+      <!-- (14) -->
+      <div class="col-md-4">
+         <div class="productbox">
+            <div class="fadeshop">
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher14.webp" alt=""></span>
+            </div>
+            <div class="product-details">
+               <a href="#">
+               <h1>진해수</h1>
+               </a>
+               <span class="price">
+               <span class="edd_price">등번호 : 48</span>
+               </span>
+            </div>
+         </div>
+      </div>
+       <!-- (15) -->
+       <div class="col-md-4">
+         <div class="productbox">
+            <div class="fadeshop">
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher15.webp" alt=""></span>
+            </div>
+            <div class="product-details">
+               <a href="#">
+               <h1>유영찬</h1>
+               </a>
+               <span class="price">
+               <span class="edd_price">등번호 : 43</span>
+               </span>
+            </div>
+         </div>
+      </div>
+      <!-- (16) -->
+      <div class="col-md-4">
+         <div class="productbox">
+            <div class="fadeshop">
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher16.webp" alt=""></span>
+            </div>
+            <div class="product-details">
+               <a href="#">
+               <h1>정우영</h1>
+               </a>
+               <span class="price">
+               <span class="edd_price">등번호 : 48</span>
+               </span>
+            </div>
+         </div>
+      </div>
+       <!-- (17) -->
+       <div class="col-md-4">
+         <div class="productbox">
+            <div class="fadeshop">
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher17.webp" alt=""></span>
+            </div>
+            <div class="product-details">
+               <a href="#">
+               <h1>오석주</h1>
+               </a>
+               <span class="price">
+               <span class="edd_price">등번호 : 43</span>
+               </span>
+            </div>
+         </div>
+      </div>
+      <!-- (18) -->
+      <div class="col-md-4">
+         <div class="productbox">
+            <div class="fadeshop">
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher18.webp" alt=""></span>
+            </div>
+            <div class="product-details">
+               <a href="#">
+               <h1>이지강</h1>
+               </a>
+               <span class="price">
+               <span class="edd_price">등번호 : 48</span>
+               </span>
+            </div>
+         </div>
+      </div>
+       <!-- (19) -->
+       <div class="col-md-4">
+         <div class="productbox">
+            <div class="fadeshop">
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher19.webp" alt=""></span>
+            </div>
+            <div class="product-details">
+               <a href="#">
+               <h1>켈리</h1>
+               </a>
+               <span class="price">
+               <span class="edd_price">등번호 : 43</span>
+               </span>
+            </div>
+         </div>
+      </div>
+      <!-- (20) -->
+      <div class="col-md-4">
+         <div class="productbox">
+            <div class="fadeshop">
+               <span class="maxproduct"><img src="/LG_cheering_img/pitcher20.webp" alt=""></span>
+            </div>
+            <div class="product-details">
+               <a href="#">
+               <h1>이민호</h1>
+               </a>
+               <span class="price">
+               <span class="edd_price">등번호 : 48</span>
+               </span>
+            </div>
+         </div>
+      </div>
+         <!-- (21) -->
+         <div class="col-md-4">
+            <div class="productbox">
+               <div class="fadeshop">
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher21.webp" alt=""></span>
+               </div>
+               <div class="product-details">
+                  <a href="#">
+                  <h1>김윤식</h1>
+                  </a>
+                  <span class="price">
+                  <span class="edd_price">등번호 : 43</span>
+                  </span>
+               </div>
+            </div>
+         </div>
+         <!-- (22) -->
+         <div class="col-md-4">
+            <div class="productbox">
+               <div class="fadeshop">
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher22.webp" alt=""></span>
+               </div>
+               <div class="product-details">
+                  <a href="#">
+                  <h1>강효종</h1>
+                  </a>
+                  <span class="price">
+                  <span class="edd_price">등번호 : 48</span>
+                  </span>
+               </div>
+            </div>
+         </div>
+          <!-- (23) -->
+          <div class="col-md-4">
+            <div class="productbox">
+               <div class="fadeshop">
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher23.webp" alt=""></span>
+               </div>
+               <div class="product-details">
+                  <a href="#">
+                  <h1>이정용</h1>
+                  </a>
+                  <span class="price">
+                  <span class="edd_price">등번호 : 43</span>
+                  </span>
+               </div>
+            </div>
+         </div>
+         <!-- (24) -->
+         <div class="col-md-4">
+            <div class="productbox">
+               <div class="fadeshop">
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher24.webp" alt=""></span>
+               </div>
+               <div class="product-details">
+                  <a href="#">
+                  <h1>이상영</h1>
+                  </a>
+                  <span class="price">
+                  <span class="edd_price">등번호 : 48</span>
+                  </span>
+               </div>
+            </div>
+         </div>
+          <!-- (25) -->
+          <div class="col-md-4">
+            <div class="productbox">
+               <div class="fadeshop">
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher25.webp" alt=""></span>
+               </div>
+               <div class="product-details">
+                  <a href="#">
+                  <h1>서동현</h1>
+                  </a>
+                  <span class="price">
+                  <span class="edd_price">등번호 : 43</span>
+                  </span>
+               </div>
+            </div>
+         </div>
+         <!-- (26) -->
+         <div class="col-md-4">
+            <div class="productbox">
+               <div class="fadeshop">
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher26.webp" alt=""></span>
+               </div>
+               <div class="product-details">
+                  <a href="#">
+                  <h1>김대현</h1>
+                  </a>
+                  <span class="price">
+                  <span class="edd_price">등번호 : 48</span>
+                  </span>
+               </div>
+            </div>
+         </div>
+          <!-- (27) -->
+          <div class="col-md-4">
+            <div class="productbox">
+               <div class="fadeshop">
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher27.webp" alt=""></span>
+               </div>
+               <div class="product-details">
+                  <a href="#">
+                  <h1>배재준</h1>
+                  </a>
+                  <span class="price">
+                  <span class="edd_price">등번호 : 43</span>
+                  </span>
+               </div>
+            </div>
+         </div>
+         <!-- (28) -->
+         <div class="col-md-4">
+            <div class="productbox">
+               <div class="fadeshop">
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher28.webp" alt=""></span>
+               </div>
+               <div class="product-details">
+                  <a href="#">
+                  <h1>최성훈</h1>
+                  </a>
+                  <span class="price">
+                  <span class="edd_price">등번호 : 48</span>
+                  </span>
+               </div>
+            </div>
+         </div>
+          <!-- (29) -->
+          <div class="col-md-4">
+            <div class="productbox">
+               <div class="fadeshop">
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher29.webp" alt=""></span>
+               </div>
+               <div class="product-details">
+                  <a href="#">
+                  <h1>김동규</h1>
+                  </a>
+                  <span class="price">
+                  <span class="edd_price">등번호 : 43</span>
+                  </span>
+               </div>
+            </div>
+         </div>
+         <!-- (30) -->
+         <div class="col-md-4">
+            <div class="productbox">
+               <div class="fadeshop">
+                  <span class="maxproduct"><img src="/LG_cheering_img/pitcher30.webp" alt=""></span>
+               </div>
+               <div class="product-details">
+                  <a href="#">
+                  <h1>김영준</h1>
+                  </a>
+                  <span class="price">
+                  <span class="edd_price">등번호 : 48</span>
+                  </span>
+               </div>
+            </div>
+         </div>
+      <button onclick="more()" style="width:100%; padding:20px 0;">More Veiw</button>
+   </div>
+      <!--이미지 박스 끝-->
    </div>
 </div>
 </div>
@@ -230,6 +553,8 @@
 <script src="/js/jquery-.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/anim.js"></script>
+<script src="/js/more.js"></script>
+
 <script>
 //----HOVER CAPTION---//     
 jQuery(document).ready(function ($) {

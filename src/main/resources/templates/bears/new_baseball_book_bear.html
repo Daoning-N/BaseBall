@@ -69,7 +69,7 @@
             엘지가 홈팀일 경우 => 티켓링크 예매
          </label>
          <div class="text-center fade-in">
-           <div class="button">Next</div>
+           <div class="button" style="margin-top:10px;">Next</div>
          </div>
        </form>
      </div>
@@ -89,7 +89,8 @@
          </label>
          </a>
          <div class="text-center fade-in">
-           <div class="button" style="margin-top:20px">Next</div>
+            <button class="back-button" style="margin-right:10px;">Back</button>
+           <div class="button" style="margin-top:20px;">Next</div>
          </div>
        </form>
      </div>
@@ -104,7 +105,8 @@
            style="max-width: 20%; margin-left:40px;"></a>
            <p ></p>
         <div class="text-center">
-          <div class="button" style="margin-top:20px">Next</div>
+         <button class="back-button" style="margin-right:10px;">Back</button>
+          <div class="button" style="margin-top:30px">Next</div>
         </div>
       </form>
      </div>
@@ -122,22 +124,45 @@
 </div>
 </section>
 
-<!-- CALL TO ACTION =============================-->
-<section class="content-block" style="background-color:#00bba7; margin-top: 420px;">
-<div class="container text-center">
-<div class="row">
-   <div class="col-sm-10 col-sm-offset-1">
-      <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
-         <h1 class="callactiontitle"> Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
-         </h1>
-      </div>
-   </div>
-</div>
-</div>
-</section>
-
 <!-- FOOTER =============================-->
-<div id="footer"></div>
+<!-- footer =============================-->
+<!-- CALL TO ACTION =============================-->
+<style>
+   .content-block {
+    margin-top: 410px;
+   }
+</style>
+
+<section class="content-block" style="background-color:#00bba7;">
+	<div class="container text-center">
+	<div class="row">
+	   <div class="col-sm-10 col-sm-offset-1">
+		  <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
+			 <h1 class="callactiontitle"> Welcome to the DooSan Bears fan club</h1>
+		  </div>
+	   </div>
+	</div>
+	</div>
+	</section>
+
+<div class="footer text-center">
+	<div class="container">
+		<div class="row">
+			<p class="footernote">
+				 DOOSAN BEARS
+			</p>
+			<ul class="social-iconsfooter">
+				<li><a href="#"><i class="fa fa-phone"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
 
 <!-- Load JS here for greater good =============================-->
 <script src="/js/jquery-.js"></script>
@@ -154,30 +179,7 @@ jQuery(document).ready(function ($) {
          $(this).find('.captionshop').fadeOut(150);
       }
    );
-});
-
-$(document).ready(function(){
-      $("#btnLogin").click(function(){
-         // 태크.val() : 태그에 입력된 값
-         // 태크.val("값") : 태그의 값을변경
-         var user_id = $("#user_id").val();
-         var user_pw = $("#user_pw").val();
-         if(user_id == ""){
-            alert("아이디를 입력하세요.");;
-            $("#user_id").focus(); //입력포커스 이동
-            return;
-         }
-         if(user_pw == ""){
-            alert("비밀번호를 입력하세요.");
-            $("#user_pw").focus();
-            return;
-         }
-         // 폼 내부의 데이터를 전송할 주소
-         document.form1.action="${path}/loginCheck.do"
-         //제출
-         document.form1.submit();
-      });
-   });
+})
 </script>
 </body>
 </html>
