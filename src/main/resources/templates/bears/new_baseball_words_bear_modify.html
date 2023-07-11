@@ -10,13 +10,12 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700" rel="stylesheet">
 <link rel="stylesheet" href="/css/style_twinbears.css">
-<link rel="stylesheet" href="/css/style_twinbears.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
    $(function() {
      
-     $('#header').load('../twins_header');
-     $('#footer').load('../twins_footer');
+     $('#header').load('../bears_header');
+     $('#footer').load('../bears_footer');
    });
    </script>
 
@@ -24,36 +23,39 @@
 </head>
 <body>
   
-   <div id="header"></div>
+  <div id="header"></div>
 
 <!-- CONTENT =============================-->
 <section class="item content" >
-<div class="container toparea">
-   <div class="underlined-title">
-
-      <div class="editContent">
-         <h1 class="text-center latestitems">야구 용어</h1>
-      </div>
-
-      <div class="wow-hr type_short">
-         <span class="wow-hr-h">
-            <img src="/images/baseball.png" alt="character" style="width: 20px" class="animated-img">
-            <img src="/images/baseball.png" alt="character" style="width: 20px" class="animated-img">
-            <img src="/images/baseball.png" alt="character" style="width: 20px" class="animated-img">
-         </span>
-      </div>
-       <!-- 여기서부터시작 -->
+  <form th:action="@{/bears/new/words/update/{id}(id=${modify.didx})}" method="post">
+  <div class="container toparea">
+     <div class="underlined-title">
+        <div class="wow-hr type_short">
+           <span class="wow-hr-h">
+              <img src="/images/baseball.png" alt="character" style="width: 20px" class="animated-img">
+              <img src="/images/baseball.png" alt="character" style="width: 20px" class="animated-img">
+              <img src="/images/baseball.png" alt="character" style="width: 20px" class="animated-img">
+           </span>
+        </div>
+     </div>
+     <!-- 여기서부터시작 -->
   </div>
-    <div class="container2">
-      <div class="shape-container" th:each="list : ${list}">
-        <div class="shape" >
-         <a th:text="${list.lw_title}" th:href="@{/twins/new/words/view(id=${list.lidx})}"></a>
+  
+      <div class="container2">
+        <div class="shape-container">
+           <div>
+              <input type="text" name="Dw_title" id="exampleFormControlInput1" placeholder="제목 입력" th:value="${modify.dw_title}">
+          </div>
+          <div class="cont">
+           <textarea id="exampleFormControlTextarea1" name="Dw_content" placeholder ="내용 입력" th:text="${modify.dw_content}"></textarea>
+       </div>
         </div>
       </div>
+      <button type="submit"> 등록</button>
+      <button a href="/bears/new/words"> 취소</button>
+    </form>
     </div>
-      <a th:if="${session.loginEmail}" th:href="@{/twins/new/words/write}">등록</a>
-  </div>
-</section>
+  </section>
 
 <!-- FOOTER =============================-->
 <div id="footer"></div>
@@ -75,14 +77,10 @@ jQuery(document).ready(function ($) {
    );
 });
 
-//애니메이션 효과
 function startAnimation() {
       var container = document.querySelector('.container2');
       container.style.animationPlayState = 'running';
     }
-
-    
-    window.onload = startAnimation;
 </script>
 
 

@@ -24,18 +24,16 @@
 <body>
   
    <div id="header"></div>
-   
-  
-
 
 <!-- CONTENT =============================-->
 <section class="item content" >
 <div class="container toparea">
    <div class="underlined-title">
+
       <div class="editContent">
          <h1 class="text-center latestitems">야구 용어</h1>
+      </div>
 
-         </div>
       <div class="wow-hr type_short">
          <span class="wow-hr-h">
             <img src="/images/baseball.png" alt="character" style="width: 20px" class="animated-img">
@@ -43,66 +41,17 @@
             <img src="/images/baseball.png" alt="character" style="width: 20px" class="animated-img">
          </span>
       </div>
-   </div>
-   <!-- 여기서부터시작 -->
-    </div>
-    <div class="container2">
-      <div class="shape-container">
-        <div class="shape">
-          스트라이크
-        </div>
-        <div class="description">
-         가나다라마바사아자차카타파하
-        </div>
-      </div>
-      
-      <div class="shape-container">
-        <div class="shape">
-          스트라이크
-        </div>
-        <div class="description">
-          
-        </div>
-      </div>
-      
-      <div class="shape-container">
-        <div class="shape">
-          스트라이크
-        </div>
-        <div class="description">
-         
-        </div>
-      </div>
-      <div class="shape-container">
-        <div class="shape">
-          스트라이크
-        </div>
-        <div class="description">
-         가나다라마바사아자차카타파하
-        </div>
-      </div>
-      <div class="shape-container">
-        <div class="shape">
-          스트라이크
-        </div>
-        <div class="description">
-         가나다라마바사아자차카타파하
-        </div>
-      </div>
-      <div class="shape-container">
-        <div class="shape">
-          스트라이크
-        </div>
-        <div class="description">
-         가나다라마바사아자차카타파하
-        </div>
-      </div>
-    </div>
-  
-     </div>
+       <!-- 여기서부터시작 -->
   </div>
-
-   </div>
+    <div class="container2">
+      <div class="shape-container" th:each="list : ${list}">
+        <div class="shape" >
+         <a th:text="${list.dw_title}" th:href="@{/bears/new/words/view(id=${list.didx})}"></a>
+        </div>
+      </div>
+    </div>
+      <a th:if="${session.loginEmail}" th:href="@{/bears/new/words/write}">등록</a>
+  </div>
 </section>
 
 <!-- FOOTER =============================-->

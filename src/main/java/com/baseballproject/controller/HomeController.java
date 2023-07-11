@@ -65,12 +65,6 @@ private final WinService winService;
         return "./bears/new_baseball_rule_bear";
     }
 
-    @GetMapping(value = "/bears/new/words")
-    public String bears_words() {
-
-        return "./bears/new_baseball_words_bear";
-    }
-
     @GetMapping(value = "/bears/cheer/sing")
     public String bears_sing() {
 
@@ -131,12 +125,6 @@ private final WinService winService;
     public String twins_rule() {
 
         return "./twins/new_baseball_rule_twins";
-    }
-
-    @GetMapping(value = "/twins/new/words")
-    public String twins_words() {
-
-        return "./twins/new_baseball_words_twins";
     }
 
     @GetMapping(value = "/twins/LG/sing")
