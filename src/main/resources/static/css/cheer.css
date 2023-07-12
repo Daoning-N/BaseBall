@@ -14,9 +14,7 @@
     margin-left:-3px;
 }
 .btn_group button{
-    border: 1px solid rgb(255, 0, 0);
     background-color: rgba(0,0,0,0);
-    color: rgb(255, 0, 0);
     padding: 5px;
     font-weight: bold;
 }
@@ -32,9 +30,7 @@
     margin-left:-3px;
 }
 .btn_group button{
-    border: 1px solid rgb(255, 0, 0);
     background-color: rgba(0,0,0,0);
-    color: rgb(255, 0, 0);
     padding: 5px;
 }
 /* hover 넣어주기 */
@@ -49,14 +45,12 @@
     margin-left:-3px;
 }
 .btn_group button{
-    border: 3px solid rgb(255, 0, 0);
     background-color: rgba(0,0,0,0);
     color: rgb(0, 0, 0);
     padding: 8px;
 }
 .btn_group button:hover{
     color:white;
-    background-color: rgb(255, 0, 0);
 }
 
 /* 리스트 */
