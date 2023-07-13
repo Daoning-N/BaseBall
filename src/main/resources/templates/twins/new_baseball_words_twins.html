@@ -53,6 +53,12 @@
     </div>
       <a th:if="${session.loginEmail}" th:href="@{/twins/new/words/write}">등록</a>
   </div>
+  <div style="text-align: center; margin-top: 20px; font-size: 20px;">
+   <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
+      <a th:if="${page != nowPage}" th:href="@{/twins/new/words(page = ${page-1})}" th:text="${page}"></a>
+      <strong  th:if="${page == nowPage}" th:text="${page}" style="color : #C0324A"></strong>
+   </th:block>        
+</div>
 </section>
 
 <!-- FOOTER =============================-->

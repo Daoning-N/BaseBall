@@ -33,7 +33,7 @@ public class wordsController {
   }
 
   @GetMapping("/twins/new/words")
-  public String lwordsboardlist(Model model, @PageableDefault(page=0, size=10, sort="lidx", direction = Sort.Direction.DESC) Pageable pageable){
+  public String lwordsboardlist(Model model, @PageableDefault(page=0, size=10, sort="lidx", direction = Sort.Direction.ASC) Pageable pageable){
 
     Page<LwordsBoard> list = wordsService.lwordsboardlist(pageable);
     int nowPage = list.getPageable().getPageNumber()+1;
@@ -91,7 +91,7 @@ public class wordsController {
   }
 
   @GetMapping("/bears/new/words")
-  public String dwordsboardlist(Model model, @PageableDefault(page=0, size=10, sort="didx", direction = Sort.Direction.DESC) Pageable pageable){
+  public String dwordsboardlist(Model model, @PageableDefault(page=0, size=10, sort="didx", direction = Sort.Direction.ASC) Pageable pageable){
     Page<DwordsBoard> list = wordsService.dwordsboardlist(pageable);
     int nowPage = list.getPageable().getPageNumber()+1;
     int startPage = Math.max(nowPage - 4, 1);
