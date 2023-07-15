@@ -53,7 +53,7 @@
    border: 2px solid black;
    border-radius: 20px;
    padding: 20px;
-   width: 70%;
+   width: 60%;
    height: auto;
    margin: 0 auto; 
    display: flex;
@@ -75,7 +75,7 @@
   flex-direction: column; 
 }
  .shape {
-   width: 20%;
+   width: 40%;
    height: 60%;
    border-radius: 50px;
    border: 2px solid rgb(28, 1, 110);
@@ -86,6 +86,9 @@
    font-weight: bold;
    font-size: 20px;
    margin-bottom: 20px; 
+   margin-left: auto;
+   margin-right: auto;
+   
  }
 
  .description {
