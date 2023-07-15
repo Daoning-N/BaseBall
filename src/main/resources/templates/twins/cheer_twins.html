@@ -18,6 +18,14 @@
      
      $('#header').load('./twins_header');
      $('#footer').load('./twins_footer');
+
+     const url = window.location.href;
+     const urlSearch = new URL(url);
+
+      if(urlSearch.searchParams.get("result")=="fail"){
+         alert("비밀번호가 틀렸습니다.")
+      }
+     
    });
    </script>
 <!-- CSS 링크 추가 -->
