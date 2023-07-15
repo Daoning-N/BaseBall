@@ -99,6 +99,21 @@ public class cheerController {
       return "redirect:/twins/cheer/delete";
     }
   }
+
+  @GetMapping("/twins/cheer/mopwcheck")
+  public String lcheermopwcheck(@RequestParam("id") Integer id, @RequestParam("pw") String pw, Model model, RedirectAttributes redirect){
+    String result = cheerService.lcheermopwcheck(id, pw);
+    if(result.equals("fail")){
+      redirect.addAttribute("result", result);
+      return "redirect:/twins/cheer";
+    } else {
+
+      redirect.addAttribute("id", id);
+      model.addAttribute("result", result);
+
+      return "redirect:/twins/cheer/modify/{id}";
+    }
+  }
   
 
   //두산
@@ -168,6 +183,21 @@ public class cheerController {
       model.addAttribute("result", result);
 
       return "redirect:/bears/cheer/delete";
+    }
+  }
+
+  @GetMapping("/bears/cheer/mopwcheck")
+  public String dcheermopwcheck(@RequestParam("id") Integer id, @RequestParam("pw") String pw, Model model, RedirectAttributes redirect){
+    String result = cheerService.dcheermopwcheck(id, pw);
+    if(result.equals("fail")){
+      redirect.addAttribute("result", result);
+      return "redirect:/bears/cheer";
+    } else {
+
+      redirect.addAttribute("id", id);
+      model.addAttribute("result", result);
+
+      return "redirect:/bears/cheer/modify/{id}";
     }
   }
 }

@@ -68,19 +68,19 @@ $(document).ready(function() {
   $(document).ready(function() {
   // 삭제 버튼 클릭 시 패스워드 확인
   $('#confirmModify').click(function() {
-    var password = $('#modifyPassword').val();
+    var password = $('#modifyPassword').submit();
     // 패스워드 유효성 검사 및 삭제 요청
-    if (password === '1234') {
-      // 패스워드가 일치하는 경우 게시글 삭제 요청 수행
-      var deleteUrl = $(this).prev('.modify-link').attr('href');
-      // 모달 닫기
-      $('#modifyModal').modal('hide');
-      setTimeout(function() {
-        window.location.href = "/twins/cheer"; // 지연 후 리다이렉트
-      }, 500); // 필요에 따라 지연 시간을 조정하세요
-    } else {
-      alert('잘못된 패스워드입니다.');
-    }
+    // if (password === '1234') {
+    //   // 패스워드가 일치하는 경우 게시글 삭제 요청 수행
+    //   var deleteUrl = $(this).prev('.modify-link').attr('href');
+    //   // 모달 닫기
+    //   $('#modifyModal').modal('hide');
+    //   setTimeout(function() {
+    //     window.location.href = "/twins/cheer"; // 지연 후 리다이렉트
+    //   }, 500); // 필요에 따라 지연 시간을 조정하세요
+    // } else {
+    //   alert('잘못된 패스워드입니다.');
+    // }
   });
 });
 });
@@ -178,6 +178,7 @@ $(document).ready(function() {
 
     <!--수정 모달부분 시작-->
     <div id="modifyModal" class="modal fade" role="dialog">
+    <form action="/twins/cheer/mopwcheck" id="modifyPassword">
       <div class="modal-dialog">
           <div class="modal-content">
               <div class="modal-header">
@@ -186,14 +187,16 @@ $(document).ready(function() {
               </div>
               <div class="modal-body">
                 <p>게시글을 수정하려면 패스워드를 입력하세요:</p>
-                <input type="password" id="modifyPassword" class="form-control" placeholder="비밀번호 입력">
+                <input type="hidden" name="id" th:value="${view.lidx}">
+                <input type="password" name="pw" id="modifyPassword" class="form-control" placeholder="비밀번호 입력">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" id="confirmModify">수정</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
               </div>
             </div>
-      </div> 
+      </div>
+    </form>
    </div> 
    <!--수정 모달부분 끝-->
    

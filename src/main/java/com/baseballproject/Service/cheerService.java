@@ -47,6 +47,16 @@ public class cheerService {
     return result;
   }
 
+  public String lcheermopwcheck(int id, String pw){
+    String result = "" ;
+    if(lcheerRepository.findById(id).get().getLc_pw().equals(pw)){
+      result = "success";
+    } else {
+      result = "fail";
+    }
+    return result;
+  }
+
   // 두산
   public void Dcheerwrite(DcheerBoard dcheerBoard){
     dcheerRepository.save(dcheerBoard);
@@ -65,6 +75,16 @@ public class cheerService {
   }
 
   public String dcheerpwcheck(Integer id, String pw){
+    String result = "" ;
+    if(dcheerRepository.findById(id).get().getDc_pw().equals(pw)){
+      result = "success";
+    } else {
+      result = "fail";
+    }
+    return result;
+  }
+
+  public String dcheermopwcheck(int id, String pw){
     String result = "" ;
     if(dcheerRepository.findById(id).get().getDc_pw().equals(pw)){
       result = "success";
