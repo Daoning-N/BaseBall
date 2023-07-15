@@ -19,7 +19,15 @@
    });
    </script>
 
+<style>
+   th{
+      text-align:center;
+   }
 
+   .rule{
+      text-align:center;
+   }
+</style>
 </head>
 
 <body>
@@ -32,7 +40,7 @@
 <div class="container toparea">
    <div class="underlined-title">
       <div class="editContent">
-         <h1 class="text-center latestitems">야구 규칙</h1>
+         <h1 class="text-center latestitems">야구 기본 규칙</h1>
 
          </div>
       <div class="wow-hr type_short">
@@ -56,18 +64,38 @@
         </thead>
         <tbody>
           <tr>
-            <td><img src="/images/baseball.png" style="width: 100px;"></td>
-            <td>adsfads</td>
-            <td>kvlacxjkvjasldkfjdsklafjlkadsjflkdsjvkladsjlkfjadsklfjadskljadsklajlkjklxCZXcz
-              dsafadsfdasfds
+            <td><img src="/images/rule.png" style="width: 100px;" height="90px;" class="enlargeable-image"></td>
+            <td class="rule"><b>기본규칙</b></td>
+            <td>① 9명씩 구성된 2개 팀이교대로 공격, 수비를 한다<br>
+               ② 총 9회 경기로 진행되며, 한 회는 초&말로 구성된다. <br>예를 들어, 1회 초에 A팀이 공격하면 1회 말에는 B팀이 공격한다.<br>
+               ③ 3번 아웃이 되면 한 팀의 공격이 끝나고 공격과 수비가 바뀐다.                              
             </td>
           </tr>
           <tr>
-            <td><img src="/images/baseball.png" width="100"></td>
-            <td>78y87y7</td>
-            <td>fjhgfhgfhgjfjfgfjjhgfgjhfhjfghjfasdfsadfsadfasdfsadfadsfadsfadsfadsfad
-              dsafsd
+            <td><img src="/images/rule2.png" style="width: 100px;" height="90px;" class="enlargeable-image"></td>
+            <td class="rule"><b>야구장 규칙</b></td>
+            <td>① 야구장은 내야와 외야로 구성된다<br>
+               ② 내야, 외야의 양 옆 바깥쪽으로 공이 나가면 파울 처리된다<br>
+               ③ 외야 끝은 펜스로 막혀 있으며 펜스 뒤로 공이 넘어가면 홈런이다.                         
             </td>
+          </tr>
+
+          <tr>
+            <td><img src="/images/rule3.png" style="width: 100px;"  height="90px;" class="enlargeable-image"></td>
+            <td class="rule"><b>수비수 규칙</b></td>
+            <td>① 그라운드 안쪽에 있는 수비수 : 내야수 바깥쪽에 있는 수비수 : 외야수<br>
+               ② 내야수 : 투수, 포수, 1루수, 2루수, 유격수, 3루수 <br>
+               ③ 외야수 : 좌익수, 중견수, 우익수<br>
+           </td>
+          </tr>
+
+          <tr>
+            <td><img src="/images/rule4.png" style="width: 100px;" height="90px;" class="enlargeable-image"></td>
+            <td class="rule"><b>공격수 규칙</b></td>
+            <td>① 공격수는 9명의 선수가 교대로 타자가 되어 공격을 한다<br>
+                ② 타자가 안타 또는 홈런을 치거나, 볼이 네개가 되어 1~3루로 나가면 주자가 된다<br>
+               ③ 주자가 1~3루를 밟은 후 홈으로 들어오면 1점을 얻는다.              
+           </td>
           </tr>
           <!-- Add more rows for additional rules and descriptions -->
         </tbody>
@@ -75,6 +103,7 @@
     </div>
    </div>
 </section>
+
 
 <!-- FOOTER =============================-->
 <div id="footer"></div>
@@ -102,7 +131,24 @@ function startAnimation() {
     }  
     window.onload = startAnimation;
 
+    function enlargeImage(imageUrl) {
+      // 팝업 창 옵션 설정
+      var popupOptions = 'width=800,height=600,scrollbars=yes';
 
+      // 팝업 창 열기
+      window.open(imageUrl, '_blank', popupOptions);
+   }
+
+   // HTML 문서가 로드된 후 실행
+   window.onload = function() {
+      // 이미지 클릭 시 enlargeImage 함수 호출
+      var images = document.querySelectorAll('.enlargeable-image');
+      images.forEach(function(image) {
+         image.addEventListener('click', function() {
+            enlargeImage(this.src);
+         });
+      });
+   };
     
 </script>
 

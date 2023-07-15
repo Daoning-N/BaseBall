@@ -22,33 +22,56 @@
 
 // 유효성 검사 시작
 
-   $(document).ready(function() {
-    // 비밀번호 유효성 검사 함수
+$(document).ready(function() {
+    // 제목 유효성 검사 함수
+    function validateTitle() {
+      var title = $('#exampleFormControlInput1').val(); // 입력된 제목 가져오기
+
+      if (title.trim() === '') {
+        // 제목이 비어있는 경우
+        alert('제목을 입력해주세요.');
+        return false; // 폼 제출 중지
+      }
+
+      return true; // 유효성 검사 통과
+    }
+    
     function validatePassword() {
       var password = $('#exampleFormControlpw').val(); // 입력된 비밀번호 가져오기
 
-      if (password.length >= 5) {
-        // 비밀번호가 4자리가 아닌 경우
-        alert('비밀번호를 입력해주세요.');
+      if (password.length !== 4 || isNaN(password)) {
+        // 비밀번호가 4자리가 아니거나 숫자가 아닌 경우
+        alert('비밀번호를 4자리 숫자로 입력해주세요.');
+        return false; // 폼 제출 중지
+      }
 
+      return true; // 유효성 검사 통과
+    }
+    // 내용 유효성 검사 함수
+    function validateContent() {
+      var content = $('#exampleFormControlTextarea1').val(); // 입력된 내용 가져오기
+
+      if (content.trim() === '') {
+        // 내용이 비어있는 경우
+        alert('내용을 입력해주세요.');
         return false; // 폼 제출 중지
       }
 
       return true; // 유효성 검사 통과
     }
 
-    // 폼 제출 시 비밀번호 유효성 검사 및 등록 완료 메시지 표시
+    // 비밀번호 유효성 검사 함수
+    // 폼 제출 시 제목, 내용, 비밀번호 유효성 검사 및 등록 완료 메시지 표시
     $('form').submit(function() {
-      if (validatePassword()) {
+      if (validateTitle() && validateContent() && validatePassword()) {
         alert('등록되었습니다!'); // 등록 완료 메시지 표시
         // 추가로 필요한 작업을 수행할 수 있습니다.
         // 예를 들어, 서버로 데이터를 전송하거나 다른 페이지로 이동하는 등의 작업을 수행할 수 있습니다.
       } else {
-        return false; // 비밀번호 유효성 검사가 실패한 경우 폼 제출 중지
+        return false; // 유효성 검사가 실패한 경우 폼 제출 중지
       }
     });
   });
-
   // 유효성 검사 끝
 
    </script>
