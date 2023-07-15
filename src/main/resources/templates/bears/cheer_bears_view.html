@@ -24,30 +24,32 @@
        });
 
 // 1. 삭제 모달 스크립트
-  $(document).ready(function() {
+$(document).ready(function() {
   // 삭제 링크 클릭 시 모달 표시
   $('.delete-link').click(function(e) { //삭제 코드의 ID값 delte-link로 설정함
     e.preventDefault();
     $('#deleteModal').modal('show');
   });
 
+
+
   // 삭제 버튼 클릭 시 패스워드 확인
   $(document).ready(function() {
   // 삭제 버튼 클릭 시 패스워드 확인
   $('#confirmDelete').click(function() {
-    var password = $('#deletePassword').val();
+    var password = $('#passwordForm').submit();
     // 패스워드 유효성 검사 및 삭제 요청
-    if (password === '1234') {
+    //if (password === '1234') {
       // 패스워드가 일치하는 경우 게시글 삭제 요청 수행
-      var deleteUrl = $(this).prev('.delete-link').attr('href');
+    //  var deleteUrl = $(this).prev('.delete-link').attr('href');
       // 모달 닫기
-      $('#deleteModal').modal('hide');
-      setTimeout(function() {
-        window.location.href = "/twins/cheer"; // 지연 후 리다이렉트
-      }, 500); // 필요에 따라 지연 시간을 조정하세요
-    } else {
-      alert('잘못된 패스워드입니다.');
-    }
+    //  $('#deleteModal').modal('hide');
+    //  setTimeout(function() {
+    //    window.location.href = "/twins/cheer"; // 지연 후 리다이렉트
+    //  }, 500); // 필요에 따라 지연 시간을 조정하세요
+    //} else {
+    //  alert('잘못된 패스워드입니다.');
+    //}
   });
 });
 });
@@ -64,19 +66,19 @@ $(document).ready(function() {
   $(document).ready(function() {
   // 삭제 버튼 클릭 시 패스워드 확인
   $('#confirmModify').click(function() {
-    var password = $('#modifyPassword').val();
+    var password = $('#modifyPassword').submit();
     // 패스워드 유효성 검사 및 삭제 요청
-    if (password === '1234') {
-      // 패스워드가 일치하는 경우 게시글 삭제 요청 수행
-      var deleteUrl = $(this).prev('.modify-link').attr('href');
-      // 모달 닫기
-      $('#modifyModal').modal('hide');
-      setTimeout(function() {
-        window.location.href = "/twins/cheer"; // 지연 후 리다이렉트
-      }, 500); // 필요에 따라 지연 시간을 조정하세요
-    } else {
-      alert('잘못된 패스워드입니다.');
-    }
+    // if (password === '1234') {
+    //   // 패스워드가 일치하는 경우 게시글 삭제 요청 수행
+    //   var deleteUrl = $(this).prev('.modify-link').attr('href');
+    //   // 모달 닫기
+    //   $('#modifyModal').modal('hide');
+    //   setTimeout(function() {
+    //     window.location.href = "/twins/cheer"; // 지연 후 리다이렉트
+    //   }, 500); // 필요에 따라 지연 시간을 조정하세요
+    // } else {
+    //   alert('잘못된 패스워드입니다.');
+    // }
   });
 });
 });
@@ -146,49 +148,55 @@ $(document).ready(function() {
     </section>
     
 
-    <!--취소 모달부분 시작-->
+   <!--삭제 모달부분 시작-->
 
-    <div id="deleteModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">게시글 삭제</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <p>게시글을 삭제하려면 패스워드를 입력하세요:</p>
-                  <input type="password" id="deletePassword" class="form-control" placeholder="비밀번호 입력">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" id="confirmDelete">삭제</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-                </div>
-              </div>
-        </div> 
-     </div> 
-
-   <!-- 취소 모달부분 끝-->
-
-    <!--수정 모달부분 시작-->
-    <div id="modifyModal" class="modal fade" role="dialog">
+   <div id="deleteModal" class="modal fade" role="dialog">
+    <form action="/bears/cheer/pwcheck" id="passwordForm">
       <div class="modal-dialog">
           <div class="modal-content">
               <div class="modal-header">
-                <h4 class="modal-title">게시글 수정</h4>
+                <h4 class="modal-title">게시글 삭제</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
               <div class="modal-body">
-                <p>게시글을 수정하려면 패스워드를 입력하세요:</p>
-                <input type="password" id="modifyPassword" class="form-control" placeholder="비밀번호 입력">
+                <p>게시글을 삭제하려면 패스워드를 입력하세요:</p>
+                <input type="hidden" name="id" th:value="${view.didx}">
+                <input type="password" name="pw" id="deletePassword" class="form-control" placeholder="비밀번호 입력">
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="confirmModify">수정</button>
+                <button type="button" class="btn btn-danger" id="confirmDelete">삭제</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
               </div>
             </div>
       </div> 
+    </form>
    </div> 
-   <!--수정 모달부분 끝-->
+
+ <!-- 삭제 모달부분 끝-->
+
+  <!--수정 모달부분 시작-->
+  <div id="modifyModal" class="modal fade" role="dialog">
+  <form action="/bears/cheer/mopwcheck" id="modifyPassword">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">게시글 수정</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>게시글을 수정하려면 패스워드를 입력하세요:</p>
+              <input type="hidden" name="id" th:value="${view.didx}">
+              <input type="password" name="pw" id="modifyPassword" class="form-control" placeholder="비밀번호 입력">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="confirmModify">수정</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+            </div>
+          </div>
+    </div>
+  </form>
+ </div> 
+ <!--수정 모달부분 끝-->
     
     <!-- FOOTER =============================-->
     <div id="footer"></div>
