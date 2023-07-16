@@ -11,15 +11,41 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700" rel="stylesheet">
 <link rel="stylesheet" href="/css/style_twinbears.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-   $(function() {
-     
-     $('#header').load('../bears_header');
-     $('#footer').load('../bears_footer');
-   });
-   </script>
 
 
+<style>
+   .word{
+   width:8%;
+   height:auto;
+   text-align:center;
+   background-color:black;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'GowunDodum-Regular';
+
+}
+
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal; 
+}
+
+body {
+ font-family: 'GowunDodum-Regular';
+ }
+
+ .description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   text-align: center;
+}
+</style>
 </head>
 <body>
   
@@ -48,17 +74,18 @@
    <div class="shape-container">
      <div class="description" th:text="${view.dw_content}"></div>
    </div>
-   <a href="/bears/new/words">목록</a>
- </div>
+   
  <div class="bt_wrap">
    <a th:if="${session.loginEmail}"  th:href="@{/bears/new/words/delete(id=${view.didx})}">삭제</a>
    <a th:if="${session.loginEmail}"  th:href="@{/bears/new/words/modify/{id}(id=${view.didx})}">수정</a>
 </div>
 </div>
 </section>
-
+<br>
+<button class="word"><a href="/bears/new/words"><div style="color:white;">목록</div></a></button>
+ </div>
 <!-- FOOTER =============================-->
-<div id="footer"></div>
+
 
 <!-- Load JS here for greater good =============================-->
 <script src="/js/jquery-.js"></script>

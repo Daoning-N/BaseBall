@@ -48,7 +48,8 @@
       <div class="shape-container" th:each="list : ${list}">
         <div class="shape" >
          <a th:text="${list.lw_title}" th:href="@{/twins/new/words/view(id=${list.lidx})}"></a>
-        </div>
+        
+      </div>
       </div>
     </div>
       <a th:if="${session.loginEmail}" th:href="@{/twins/new/words/write}">등록</a>
