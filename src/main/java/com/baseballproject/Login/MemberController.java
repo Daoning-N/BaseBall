@@ -19,7 +19,7 @@ public class MemberController {
     
     @GetMapping("/signup")
     public String saveForm() {
-        return "/signup";
+        return "./signup";
     }
 
     @PostMapping("/signup")    
@@ -28,12 +28,12 @@ public class MemberController {
         System.out.println("memberDTO = " + memberDTO);
         memberService.save(memberDTO);
 
-        return "/index";
+        return "./index";
     }
     
     @GetMapping("/login")
     public String loginForm(){
-        return "/login";
+        return "./login";
     }
 
 
@@ -43,10 +43,10 @@ public class MemberController {
         if (loginResult != null) {
             // login 성공
             session.setAttribute("loginEmail", loginResult.getMemberEmail());
-            return "/index";
+            return "./index";
         } else {
             // login 실패
-            return "/login";
+            return "./login";
         }
     }
 
@@ -54,6 +54,6 @@ public class MemberController {
     public String logout(HttpSession session) {
         // 세션에서 로그인 정보를 삭제하고 로그아웃 처리합니다.
         session.invalidate();
-        return "redirect:./"; // 로그아웃 후 로그인 페이지로 이동합니다.
+        return "redirect:./login"; // 로그아웃 후 로그인 페이지로 이동합니다.
     }
 }
