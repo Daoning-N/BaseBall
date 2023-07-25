@@ -35,7 +35,7 @@ public class cheerController {
   @PostMapping("/twins/cheer/write")
   public String LcheerWritePost(LcheerBoard lcheerBoard){
     cheerService.Lcheerwrite(lcheerBoard);
-    return "redirect:/twins/cheer";
+    return "redirect:./twins/cheer";
   }
 
   @GetMapping("/twins/cheer")
@@ -64,13 +64,13 @@ public class cheerController {
   @GetMapping("/twins/cheer/delete")
   public String lcheerboarddel(Integer id){
     cheerService.lcheerboardDel(id);
-    return "redirect:/twins/cheer";
+    return "redirect:./twins/cheer";
   }
 
   @GetMapping("/twins/cheer/modify/{id}")
   public String lcheerboardmodify(@PathVariable("id") Integer id, Model model){
     model.addAttribute("modify", cheerService.lcheerboardview(id));
-    return "twins/cheer_twins_modify";
+    return "./twins/cheer_twins_modify";
   }
 
   @PostMapping("/twins/cheer/update/{id}")
@@ -82,7 +82,7 @@ public class cheerController {
 
     cheerService.Lcheerwrite(boardTemp);
 
-    return "redirect:/twins/cheer";
+    return "redirect:./twins/cheer";
   }
 
   @GetMapping("/twins/cheer/pwcheck")
@@ -90,13 +90,13 @@ public class cheerController {
     String result = cheerService.lcheerpwcheck(id, pw);
     if(result.equals("fail")){
       redirect.addAttribute("result", result);
-      return "redirect:/twins/cheer";
+      return "redirect:./twins/cheer";
     } else {
 
       redirect.addAttribute("id", id);
       model.addAttribute("result", result);
 
-      return "redirect:/twins/cheer/delete";
+      return "redirect:./twins/cheer/delete";
     }
   }
 
@@ -105,13 +105,13 @@ public class cheerController {
     String result = cheerService.lcheermopwcheck(id, pw);
     if(result.equals("fail")){
       redirect.addAttribute("result", result);
-      return "redirect:/twins/cheer";
+      return "redirect:./twins/cheer";
     } else {
 
       redirect.addAttribute("id", id);
       model.addAttribute("result", result);
 
-      return "redirect:/twins/cheer/modify/{id}";
+      return "redirect:./twins/cheer/modify/{id}";
     }
   }
   
@@ -124,7 +124,7 @@ public class cheerController {
   @PostMapping("/bears/cheer/write")
   public String DcheerWritePost(DcheerBoard dcheerBoard){
     cheerService.Dcheerwrite(dcheerBoard);
-    return "redirect:/bears/cheer";
+    return "redirect:./bears/cheer";
   }
 
   @GetMapping("/bears/cheer")
@@ -150,13 +150,13 @@ public class cheerController {
   @GetMapping("/bears/cheer/delete")
   public String dcheerboarddel(Integer id){
     cheerService.dcheerboardDel(id);
-    return "redirect:/bears/cheer";
+    return "redirect:./bears/cheer";
   }
 
   @GetMapping("/bears/cheer/modify/{id}")
   public String dcheerboardmodify(@PathVariable("id") Integer id, Model model){
     model.addAttribute("modify", cheerService.dcheerboardview(id));
-    return "bears/cheer_bears_modify";
+    return "./bears/cheer_bears_modify";
   }
 
   @PostMapping("/bears/cheer/update/{id}")
@@ -168,7 +168,7 @@ public class cheerController {
 
     cheerService.Dcheerwrite(boardTemp);
 
-    return "redirect:/bears/cheer";
+    return "redirect:./bears/cheer";
   }
 
   @GetMapping("/bears/cheer/pwcheck")
@@ -176,13 +176,13 @@ public class cheerController {
     String result = cheerService.dcheerpwcheck(id, pw);
     if(result.equals("fail")){
       redirect.addAttribute("result", result);
-      return "redirect:/bears/cheer";
+      return "redirect:./bears/cheer";
     } else {
 
       redirect.addAttribute("id", id);
       model.addAttribute("result", result);
 
-      return "redirect:/bears/cheer/delete";
+      return "redirect:./bears/cheer/delete";
     }
   }
 
@@ -191,13 +191,13 @@ public class cheerController {
     String result = cheerService.dcheermopwcheck(id, pw);
     if(result.equals("fail")){
       redirect.addAttribute("result", result);
-      return "redirect:/bears/cheer";
+      return "redirect:./bears/cheer";
     } else {
 
       redirect.addAttribute("id", id);
       model.addAttribute("result", result);
 
-      return "redirect:/bears/cheer/modify/{id}";
+      return "redirect:./bears/cheer/modify/{id}";
     }
   }
 }
