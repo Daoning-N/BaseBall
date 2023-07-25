@@ -5,8 +5,8 @@ server:
 #  DB
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://baseball.cfh9yywjmmnp.us-east-1.rds.amazonaws.com:3306/baseball
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://baseball.cfh9yywjmmnp.us-east-1.rds.amazonaws.com:3306/baseball?useSSL=false
     username: baseball
     password: kpk$0258
   thymeleaf:
